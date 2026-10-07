@@ -1,120 +1,95 @@
-/* PCB Portfolio - Custom Stylesheet */
+/* ==========================================================================
+   Siddharth Kote — PCB Design Engineer Portfolio
+   Color Palette:
+     - Background: #0B1120
+     - Secondary / Cards: #111827
+     - Text Primary: #F8FAFC
+     - Text Muted: #94A3B8
+     - Accent: #22C55E (PCB Emerald Green)
+   ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --pcb-bg: #070a12;
-  --pcb-card: #0d1322;
-  --pcb-card-hover: #131b2e;
-  --pcb-border: rgba(30, 41, 59, 0.8);
-  --pcb-border-glow: rgba(16, 185, 129, 0.3);
-  --copper-gold: #f59e0b;
-  --solder-green: #10b981;
-  --trace-cyan: #06b6d4;
-  --via-red: #ef4444;
-  --silkscreen-white: #f8fafc;
+  --bg-primary: #0B1120;
+  --bg-secondary: #111827;
+  --bg-card: #131C31;
+  --bg-card-hover: #17233D;
+  --border-subtle: #1F2937;
+  --border-active: #374151;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --accent-pcb: #22C55E;
+  --accent-pcb-glow: rgba(34, 197, 94, 0.15);
+  --copper-accent: #F59E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--pcb-bg);
-  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* PCB Grid Background */
-.pcb-grid-bg {
-  background-color: #070a12;
+/* Subtle PCB grid background - very subtle, engineering graph paper vibe */
+.pcb-grid-pattern {
+  background-color: #0B1120;
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.06) 0%, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100% 100%, 32px 32px, 32px 32px;
 }
 
-/* Subtle circuit trace background for hero */
-.pcb-trace-glow {
-  position: relative;
-}
-.pcb-trace-glow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20%;
-  width: 60%;
-  height: 100%;
-  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 80%);
-  pointer-events: none;
-  filter: blur(60px);
-  z-index: 0;
-}
-
-/* Hardware Card Styling */
+/* Engineering Hardware Cards */
 .hw-card {
-  background: #0d1322;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #111827;
+  border: 1px solid #1F2937;
+  border-radius: 0.75rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .hw-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 10px 30px -4px rgba(16, 185, 129, 0.1);
-  transform: translateY(-2px);
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px -3px rgba(34, 197, 94, 0.1);
 }
 
-/* Copper ENIG Accent Badge */
-.enig-badge {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.05) 100%);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #fbbf24;
-}
-
-/* Solder Mask Accent Badge */
-.mask-badge {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-}
-
-/* Layer Indicator Pills */
-.layer-pill {
+/* Technical PCB badges */
+.badge-pcb {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   padding: 0.25rem 0.625rem;
   border-radius: 9999px;
-  font-size: 0.75rem;
   font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #4ADE80;
 }
 
-.layer-top {
-  background: rgba(239, 68, 68, 0.12);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.layer-bottom {
-  background: rgba(59, 130, 246, 0.12);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.layer-silk {
-  background: rgba(255, 255, 255, 0.1);
-  color: #f1f5f9;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.layer-gnd {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+.badge-tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: #1F2937;
+  border: 1px solid #374151;
+  color: #CBD5E1;
 }
 
 /* Custom Scrollbar */
@@ -123,45 +98,49 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070a12;
+  background: #0B1120;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1F2937;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
-}
-
-/* Animation utilities */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 4s infinite ease-in-out;
-}
-
-/* Circuit trace animation */
-@keyframes dash {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-
-.circuit-trace {
-  stroke-dasharray: 8, 4;
-  animation: dash 12s linear infinite;
+  background: #374151;
 }
 
 /* Toast Notification */
 #toast {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* Lightbox zoomable image cursor */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 1px solid #1F2937;
+  background: #111827;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-card:hover {
+  border-color: #22C55E;
+  transform: translateY(-2px);
+}
+
+.gallery-card img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Modal animations */
+.modal-overlay {
+  transition: opacity 0.2s ease;
+}
+.modal-content {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
 }

@@ -3,27 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siddharth Kote | PCB Design Engineer & Electronics Hardware</title>
-  <meta name="description" content="Portfolio of Siddharth Kote - PCB Design Engineer specializing in KiCad 9, 2-layer routing, hierarchical schematics, MCU hardware bring-up, and DFM verification.">
-  
+  <title>Siddharth Kote | PCB Design Engineer & Hardware Developer</title>
+  <meta name="description" content="Portfolio of Siddharth Kote - PCB Design Engineer focused on KiCad 9, schematic capture, 2-layer PCB layout, ERC/DRC verification, and manufacturing Gerber generation.">
+  <meta name="keywords" content="PCB Design Engineer, Hardware Engineer, Electronics Engineer, KiCad 9, Schematic Capture, PCB Layout, Gerber, ATmega328P, ESP32, DRC, ERC">
+  <meta name="author" content="Siddharth Kote">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Siddharth Kote | PCB Design Engineer & Hardware Developer">
+  <meta property="og:description" content="ECE Graduate focused on KiCad 9, 2-layer PCB layout, routing, ERC/DRC compliance, and embedded hardware development.">
+  <meta property="og:url" content="https://siddharthkote25.github.io/pcb-protfolio/">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            pcb: {
-              900: '#060911',
-              800: '#0c1220',
-              700: '#141d33',
-              border: '#1e293b'
-            },
-            copper: '#f59e0b',
-            solder: '#10b981',
-            silk: '#f8fafc',
-            trace: '#06b6d4'
+            brand: {
+              bg: '#0B1120',
+              card: '#111827',
+              cardHover: '#172238',
+              border: '#1F2937',
+              borderLight: '#374151',
+              text: '#F8FAFC',
+              muted: '#94A3B8',
+              accent: '#22C55E',
+              accentDark: '#15803D',
+              accentLight: '#4ADE80',
+            }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -34,1439 +43,1447 @@
     }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#070a12] text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 pcb-grid-bg">
+<body class="bg-[#0B1120] text-[#F8FAFC] pcb-grid-pattern selection:bg-[#22C55E]/30 selection:text-[#4ADE80]">
 
-  <!-- ================= HEADER / NAVIGATION ================= -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-[#070a12]/85 border-b border-slate-800/80">
+  <!-- ================= 1. NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-[#0B1120]/90 backdrop-blur-md border-b border-[#1F2937]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo / Identity -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:border-emerald-400 transition-colors shadow-inner">
+      <!-- Logo / Name -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E] group-hover:border-[#22C55E] transition-colors shadow-inner">
           <i data-lucide="cpu" class="w-5 h-5"></i>
         </div>
         <div>
-          <span class="font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">SIDDHARTH KOTE</span>
-          <span class="hidden sm:inline-block text-xs font-mono text-slate-400 ml-2 px-1.5 py-0.5 rounded bg-slate-800/80 border border-slate-700/60">KiCad 9 • Hardware</span>
+          <span class="font-bold tracking-tight text-white group-hover:text-[#4ADE80] transition-colors">SIDDHARTH KOTE</span>
+          <span class="hidden sm:inline-block text-xs font-mono text-[#94A3B8] ml-2 px-1.5 py-0.5 rounded bg-[#111827] border border-[#1F2937]">PCB Design</span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
-        <a href="#skills" class="hover:text-emerald-400 transition-colors">ECAD & Skills</a>
-        <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
-        <a href="#workflow" class="hover:text-emerald-400 transition-colors">Design Workflow</a>
-        <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
-        <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#94A3B8]">
+        <a href="#home" class="hover:text-[#22C55E] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#22C55E] transition-colors">About</a>
+        <a href="#skills" class="hover:text-[#22C55E] transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-[#22C55E] transition-colors">Projects</a>
+        <a href="#process" class="hover:text-[#22C55E] transition-colors">Process</a>
+        <a href="#capabilities" class="hover:text-[#22C55E] transition-colors">Capabilities</a>
+        <a href="#gallery" class="hover:text-[#22C55E] transition-colors">Gallery</a>
+        <a href="#resume" class="hover:text-[#22C55E] transition-colors">Resume</a>
+        <a href="#contact" class="hover:text-[#22C55E] transition-colors">Contact</a>
       </nav>
 
-      <!-- Action Buttons -->
+      <!-- Desktop Nav Actions -->
       <div class="hidden sm:flex items-center gap-3">
-        <a href="#contact" class="px-3.5 py-1.5 text-xs font-mono font-medium rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-400 transition-all flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>Open for Roles</span>
+        <a href="resume.pdf" download class="px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#111827] text-white border border-[#1F2937] hover:border-[#22C55E] transition-all flex items-center gap-1.5">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-[#22C55E]"></i>
+          <span>Resume</span>
         </a>
-        <button class="copy-trigger px-3.5 py-1.5 text-xs font-mono font-medium rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-1.5" data-copy="siddharthkote129@gmail.com" data-label="Email">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Copy Email</span>
-        </button>
+        <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-md bg-[#111827] text-[#94A3B8] hover:text-white border border-[#1F2937] hover:border-slate-600 transition-all" title="GitHub Profile">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[#94A3B8] hover:text-white hover:bg-[#111827] focus:outline-none" aria-label="Toggle navigation menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
 
-    <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 bg-[#0d1322] border-b border-slate-800 space-y-2 text-sm">
-      <a href="#about" class="block py-2 text-slate-300 hover:text-emerald-400">About</a>
-      <a href="#skills" class="block py-2 text-slate-300 hover:text-emerald-400">ECAD & Skills</a>
-      <a href="#projects" class="block py-2 text-slate-300 hover:text-emerald-400">Projects</a>
-      <a href="#workflow" class="block py-2 text-slate-300 hover:text-emerald-400">Design Workflow</a>
-      <a href="#education" class="block py-2 text-slate-300 hover:text-emerald-400">Education & Certs</a>
-      <a href="#contact" class="block py-2 text-slate-300 hover:text-emerald-400">Contact</a>
-      <div class="pt-2 flex flex-col gap-2">
-        <button class="copy-trigger w-full py-2 text-xs font-mono rounded bg-slate-800 text-slate-200 border border-slate-700 text-center" data-copy="siddharthkote129@gmail.com" data-label="Email">
-          Copy Email (siddharthkote129@gmail.com)
-        </button>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 bg-[#111827] border-b border-[#1F2937] space-y-2 text-sm font-medium">
+      <a href="#home" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Home</a>
+      <a href="#about" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">About</a>
+      <a href="#skills" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Skills</a>
+      <a href="#projects" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Projects</a>
+      <a href="#process" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Process</a>
+      <a href="#capabilities" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Capabilities</a>
+      <a href="#gallery" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Gallery</a>
+      <a href="#resume" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Resume</a>
+      <a href="#contact" class="block py-2 text-[#94A3B8] hover:text-[#22C55E]">Contact</a>
+      <div class="pt-2 flex items-center gap-3 border-t border-[#1F2937]">
+        <a href="resume.pdf" download class="w-full text-center py-2 text-xs font-mono rounded bg-[#22C55E]/10 text-[#22C55E] border border-[#22C55E]/30">Download Resume (PDF)</a>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="about" class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden pcb-trace-glow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Column: Bio & Core Pitch -->
-        <div class="lg:col-span-7 space-y-6">
+  <main>
+    <!-- ================= 2. HERO ================= -->
+    <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          <!-- Status Badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-mono">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>AVAILABLE FOR ENTRY-LEVEL PCB & HARDWARE ROLES (2026 GRAD)</span>
-          </div>
+          <!-- Hero Text -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Category Tag -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#22C55E]/10 border border-[#22C55E]/30 text-[#22C55E] text-xs font-mono font-medium">
+              <span class="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse"></span>
+              <span>PCB DESIGN • HARDWARE • ELECTRONICS</span>
+            </div>
 
-          <!-- Main Heading -->
-          <div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Siddharth Kote
-            </h1>
-            <p class="text-xl sm:text-2xl font-mono text-emerald-400 mt-2 font-medium">
-              PCB Design Engineer <span class="text-slate-500">|</span> Electronics Hardware
+            <!-- Role & Name -->
+            <div>
+              <p class="text-sm sm:text-base font-mono text-[#94A3B8] uppercase tracking-wider mb-1">Target Career</p>
+              <h2 class="text-2xl sm:text-3xl font-mono font-bold text-[#22C55E]">PCB Design Engineer</h2>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mt-2">
+                Siddharth Kote
+              </h1>
+            </div>
+
+            <!-- Professional Pitch -->
+            <p class="text-[#94A3B8] text-base sm:text-lg leading-relaxed max-w-2xl">
+              ECE graduate focused on <strong class="text-white font-semibold">PCB design</strong>, <strong class="text-white font-semibold">hardware development</strong> and <strong class="text-white font-semibold">electronics</strong>. Experienced in schematic capture, footprint creation, 2-layer PCB layout, ground copper pours, ERC/DRC verification, and manufacturing Gerber generation in KiCad 9.
             </p>
-          </div>
 
-          <!-- Summary / Bio -->
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Electronics and Communication Engineering graduate (2026) focused on end-to-end PCB engineering in <strong class="text-white font-semibold">KiCad 9</strong>. Proven capability in translating technical schematics into robust, manufacturable 2-layer boards with disciplined component placement, ERC/DRC compliance, ground plane management, and complete fabrication-ready Gerber generation.
-          </p>
-
-          <!-- Core Specializations Pills -->
-          <div class="flex flex-wrap gap-2 text-xs font-mono">
-            <span class="px-3 py-1 rounded bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-400"></i> 2-Layer Layout & Routing
-            </span>
-            <span class="px-3 py-1 rounded bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="git-branch" class="w-3.5 h-3.5 text-cyan-400"></i> Hierarchical Schematics
-            </span>
-            <span class="px-3 py-1 rounded bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i> ERC & DRC Clean
-            </span>
-            <span class="px-3 py-1 rounded bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-              <i data-lucide="radio" class="w-3.5 h-3.5 text-purple-400"></i> ESP32, 4G LTE & GPS
-            </span>
-          </div>
-
-          <!-- CTA Buttons -->
-          <div class="pt-2 flex flex-wrap items-center gap-4">
-            <a href="#projects" class="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
-              <i data-lucide="eye" class="w-4 h-4"></i>
-              <span>Inspect Board Designs</span>
-            </a>
-            
-            <a href="mailto:siddharthkote129@gmail.com" class="px-6 py-3 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-              <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
-              <span>Get In Touch</span>
-            </a>
-
-            <button class="copy-trigger px-4 py-3 rounded-lg bg-slate-900/80 hover:bg-slate-800 text-slate-300 text-sm border border-slate-800 transition-all flex items-center gap-2" data-copy="+918623001138" data-label="Phone Number">
-              <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
-              <span class="font-mono text-xs">+91-8623001138</span>
-            </button>
-          </div>
-
-          <!-- Quick Metrics Bar -->
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-lg">
-            <div>
-              <div class="text-2xl font-bold font-mono text-emerald-400">KiCad 9</div>
-              <div class="text-xs text-slate-400">Primary ECAD Tool</div>
-            </div>
-            <div>
-              <div class="text-2xl font-bold font-mono text-white">2 Boards</div>
-              <div class="text-xs text-slate-400">End-to-End Designed</div>
-            </div>
-            <div>
-              <div class="text-2xl font-bold font-mono text-cyan-400">Pune, IN</div>
-              <div class="text-xs text-slate-400">Location</div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Column: Interactive Hardware Board Preview Card -->
-        <div class="lg:col-span-5">
-          <div class="hw-card rounded-2xl p-5 border border-slate-700/60 shadow-2xl relative group">
-            
-            <!-- Terminal Header -->
-            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800 text-xs font-mono">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                <span class="text-slate-400 ml-2">kicad-pcb-inspector.py</span>
-              </div>
-              <span class="text-emerald-400 flex items-center gap-1">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> DRC: 0 Errors
+            <!-- Key Proof Points -->
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1F2937] text-slate-300 flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-[#22C55E]"></i> 2-Layer PCB Layout
+              </span>
+              <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1F2937] text-slate-300 flex items-center gap-1.5">
+                <i data-lucide="git-branch" class="w-3.5 h-3.5 text-cyan-400"></i> Hierarchical Schematics
+              </span>
+              <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1F2937] text-slate-300 flex items-center gap-1.5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-400"></i> ERC & DRC Validated
+              </span>
+              <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1F2937] text-slate-300 flex items-center gap-1.5">
+                <i data-lucide="file-output" class="w-3.5 h-3.5 text-purple-400"></i> Gerber & Drill Outputs
               </span>
             </div>
 
-            <!-- Stylized PCB Artwork Graphic -->
-            <div class="relative bg-[#09101d] rounded-xl border border-slate-800/90 p-4 overflow-hidden aspect-[4/3] flex items-center justify-center">
+            <!-- Action Buttons -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="#projects" class="px-6 py-3 rounded-lg bg-[#22C55E] hover:bg-[#16A34A] text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-green-500/20 flex items-center gap-2">
+                <i data-lucide="eye" class="w-4 h-4"></i>
+                <span>VIEW PROJECTS</span>
+              </a>
               
-              <!-- Subtle Background Vector Grid -->
-              <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="hero-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="1" fill="#334155" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#hero-grid)" />
-              </svg>
+              <a href="resume.pdf" download class="px-6 py-3 rounded-lg bg-[#111827] hover:bg-[#1F2937] text-white font-medium text-sm border border-[#1F2937] hover:border-[#22C55E] transition-all flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4 text-[#22C55E]"></i>
+                <span>DOWNLOAD RESUME</span>
+              </a>
 
-              <!-- Stylized 2-Layer PCB Board Art (SVG) -->
-              <svg viewBox="0 0 400 300" class="w-full h-full relative z-10 filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-                <!-- Board Substrate FR4 -->
-                <rect x="25" y="20" width="350" height="260" rx="14" fill="#064e3b" stroke="#047857" stroke-width="2.5" />
-                
-                <!-- Mounting Holes -->
-                <circle cx="45" cy="40" r="10" fill="#070a12" stroke="#d97706" stroke-width="2" />
-                <circle cx="355" cy="40" r="10" fill="#070a12" stroke="#d97706" stroke-width="2" />
-                <circle cx="45" cy="260" r="10" fill="#070a12" stroke="#d97706" stroke-width="2" />
-                <circle cx="355" cy="260" r="10" fill="#070a12" stroke="#d97706" stroke-width="2" />
-
-                <!-- Ground Plane Polygon Hatch -->
-                <path d="M 50 50 L 350 50 L 350 250 L 50 250 Z" fill="none" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4" />
-
-                <!-- Copper Traces (Top Layer - F.Cu Red/Gold) -->
-                <!-- Power & Bus lines -->
-                <path d="M 60 150 H 130 L 150 130 H 170" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" />
-                <path d="M 60 165 H 125 L 145 145 H 170" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
-                <path d="M 60 180 H 120 L 140 160 H 170" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" />
-                
-                <!-- Crystal traces -->
-                <path d="M 230 135 H 265 L 275 125" fill="none" stroke="#ef4444" stroke-width="1.5" />
-                <path d="M 230 145 H 265 L 275 155" fill="none" stroke="#ef4444" stroke-width="1.5" />
-
-                <!-- Bottom Layer Copper (B.Cu Blue) -->
-                <path d="M 195 90 V 60 H 280" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,2" opacity="0.8" />
-                <path d="M 205 210 V 240 H 120" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,2" opacity="0.8" />
-
-                <!-- MCU U1 (ATmega328P / ESP32 TQFP Package) -->
-                <rect x="170" y="110" width="60" height="60" rx="3" fill="#0f172a" stroke="#cbd5e1" stroke-width="1" />
-                <!-- MCU Pins -->
-                <g fill="#fbbf24">
-                  <!-- Left pins -->
-                  <rect x="160" y="116" width="9" height="3" /><rect x="160" y="124" width="9" height="3" /><rect x="160" y="132" width="9" height="3" /><rect x="160" y="140" width="9" height="3" /><rect x="160" y="148" width="9" height="3" /><rect x="160" y="156" width="9" height="3" />
-                  <!-- Right pins -->
-                  <rect x="231" y="116" width="9" height="3" /><rect x="231" y="124" width="9" height="3" /><rect x="231" y="132" width="9" height="3" /><rect x="231" y="140" width="9" height="3" /><rect x="231" y="148" width="9" height="3" /><rect x="231" y="156" width="9" height="3" />
-                  <!-- Top pins -->
-                  <rect x="176" y="100" width="3" height="9" /><rect x="184" y="100" width="3" height="9" /><rect x="192" y="100" width="3" height="9" /><rect x="200" y="100" width="3" height="9" /><rect x="208" y="100" width="3" height="9" /><rect x="216" y="100" width="3" height="9" />
-                  <!-- Bottom pins -->
-                  <rect x="176" y="171" width="3" height="9" /><rect x="184" y="171" width="3" height="9" /><rect x="192" y="171" width="3" height="9" /><rect x="200" y="171" width="3" height="9" /><rect x="208" y="171" width="3" height="9" /><rect x="216" y="171" width="3" height="9" />
-                </g>
-
-                <!-- MCU Label & Pin 1 Dot -->
-                <circle cx="178" cy="118" r="2.5" fill="#f8fafc" />
-                <text x="200" y="144" fill="#94a3b8" font-size="10" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">MCU</text>
-
-                <!-- Crystal Y1 -->
-                <rect x="280" y="130" width="28" height="18" rx="4" fill="#334155" stroke="#f8fafc" stroke-width="0.8" />
-                <text x="294" y="143" fill="#cbd5e1" font-size="7" font-family="JetBrains Mono" text-anchor="middle">16MHz</text>
-
-                <!-- Decoupling Capacitors C1, C2 (0805 SMT) -->
-                <rect x="145" y="115" width="10" height="6" fill="#92400e" stroke="#fbbf24" stroke-width="0.8" />
-                <rect x="145" y="155" width="10" height="6" fill="#92400e" stroke="#fbbf24" stroke-width="0.8" />
-                <text x="140" y="112" fill="#f8fafc" font-size="6" font-family="JetBrains Mono">C_DEC</text>
-
-                <!-- Vias with Copper Rings -->
-                <circle cx="130" cy="130" r="3.5" fill="#070a12" stroke="#fbbf24" stroke-width="1.5" />
-                <circle cx="280" cy="60" r="3.5" fill="#070a12" stroke="#fbbf24" stroke-width="1.5" />
-                <circle cx="120" cy="240" r="3.5" fill="#070a12" stroke="#fbbf24" stroke-width="1.5" />
-                <circle cx="260" cy="200" r="3.5" fill="#070a12" stroke="#fbbf24" stroke-width="1.5" />
-
-                <!-- Silkscreen Markings -->
-                <text x="200" y="275" fill="#f8fafc" font-size="11" font-family="JetBrains Mono" font-weight="600" text-anchor="middle" letter-spacing="1">KICAD 9.0 • 2-LAYER FR4</text>
-                <text x="45" y="125" fill="#f8fafc" font-size="8" font-family="JetBrains Mono">I2C / UART</text>
-                <!-- Pin header J1 -->
-                <g fill="#0f172a" stroke="#f8fafc" stroke-width="0.8">
-                  <rect x="45" y="135" width="8" height="8" /><rect x="45" y="148" width="8" height="8" /><rect x="45" y="161" width="8" height="8" /><rect x="45" y="174" width="8" height="8" />
-                </g>
-                <circle cx="49" cy="139" r="2" fill="#fbbf24" />
-                <circle cx="49" cy="152" r="2" fill="#fbbf24" />
-                <circle cx="49" cy="165" r="2" fill="#fbbf24" />
-                <circle cx="49" cy="178" r="2" fill="#fbbf24" />
-              </svg>
-
-              <!-- Floating Live Chip Pill -->
-              <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded bg-slate-900/90 border border-slate-700/80 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 shadow-md">
-                <i data-lucide="shield" class="w-3 h-3 text-emerald-400"></i>
-                <span>IPC-2221 Design Rules</span>
-              </div>
+              <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-lg bg-[#111827] hover:bg-[#1F2937] text-[#94A3B8] hover:text-white text-sm border border-[#1F2937] transition-all flex items-center gap-2" title="View GitHub Repositories">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span class="font-mono text-xs">GitHub Profile</span>
+              </a>
             </div>
 
-            <!-- Card Bottom Specs -->
-            <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
-              <span>Stackup: 1.6mm FR-4 (1oz Cu)</span>
-              <span class="text-amber-400">HASL / ENIG Compatible</span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= TECHNICAL SKILLS & ECAD STACK ================= -->
-  <section id="skills" class="py-20 border-t border-slate-800/80 bg-[#090d18]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-emerald-400 text-xs font-mono border border-slate-700">
-          <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
-          <span>CORE ENGINEERING CAPABILITIES</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          ECAD Toolchain & Design Disciplines
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Trained with modern industry workflows in KiCad 9, prioritizing signal cleanliness, thermal stability, proper component decoupling, and fabrication clearance.
-        </p>
-      </div>
-
-      <!-- Skills Grid (4 Category Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Category 1: ECAD Tools & Version Control -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 mb-4">
-              <i data-lucide="layout-grid" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">ECAD & Versioning</h3>
-            <p class="text-xs text-slate-400 mb-4">Core software suite for full lifecycle schematic-to-board development.</p>
-            
-            <ul class="space-y-2 text-xs font-mono text-slate-300">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <strong class="text-white">KiCad 9 (Latest)</strong>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>KiCad Schematic Capture</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>KiCad Pcbnew Layout & 3D</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Gerbview (Gerber Inspection)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Git & GitHub Hardware Repos</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-800/80 text-[11px] font-mono text-emerald-400">
-            Certified in KiCad 9
-          </div>
-        </div>
-
-        <!-- Category 2: Schematic Engineering -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 mb-4">
-              <i data-lucide="git-merge" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Schematic Capture</h3>
-            <p class="text-xs text-slate-400 mb-4">Architecting clear, modular, and error-checked circuit diagrams.</p>
-            
-            <ul class="space-y-2 text-xs font-mono text-slate-300">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                <span>Hierarchical Sheet Partitioning</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Symbol Creation from Datasheets</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Net Labels & Global Buses</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Power Flags (PWR_FLAG)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>ERC (Electrical Rule Checks)</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-800/80 text-[11px] font-mono text-cyan-400">
-            0 Unconnected Nets / Errors
-          </div>
-        </div>
-
-        <!-- Category 3: PCB Layout & Fabrication Prep -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 mb-4">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Layout & DFM</h3>
-            <p class="text-xs text-slate-400 mb-4">Optimized component placement and routing for manufacturability.</p>
-            
-            <ul class="space-y-2 text-xs font-mono text-slate-300">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                <span>2-Layer Routing Strategies</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Net Classes (Power vs Signal)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Copper Fills & Ground Planes</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>DRC (Design Rule Verification)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Gerber RS-274X & Drill Export</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-800/80 text-[11px] font-mono text-amber-400">
-            Fabrication-Ready Outputs
-          </div>
-        </div>
-
-        <!-- Category 4: Hardware Theory & Silicon -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div>
-            <div class="w-12 h-12 rounded-lg bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-400 mb-4">
-              <i data-lucide="zap" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">Hardware & Silicon</h3>
-            <p class="text-xs text-slate-400 mb-4">Embedded circuitry, passive networks, and wireless modules.</p>
-            
-            <ul class="space-y-2 text-xs font-mono text-slate-300">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                <span>ESP32 & ATmega328P-AU</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>A7670C 4G LTE & NEO-6M GPS</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Decoupling Capacitor Placement</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>Crystals & Load Capacitance</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
-                <span>LDOs (HT7333 3.3V) & Li-Po Power</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-800/80 text-[11px] font-mono text-purple-400">
-            I2C, UART, ICSP, SPI Buses
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= FEATURED PROJECTS SECTION ================= -->
-  <section id="projects" class="py-24 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/25 mb-3">
-            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-            <span>PROVEN HARDWARE DESIGNS</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured Board Implementations
-          </h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
-            Complete hardware deliverables executed in KiCad 9: from mathematical component calculations and hierarchical schematics to 2-layer routing and Gerber export.
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-          <span>Click tabs to inspect Schematic, Layout & DFM rules</span>
-        </div>
-      </div>
-
-      <!-- ================= PROJECT 1: MCU DATA LOGGER ================= -->
-      <div class="project-card hw-card rounded-2xl border border-slate-800 overflow-hidden mb-16">
-        
-        <!-- Project Top Bar -->
-        <div class="px-6 py-5 bg-slate-900/90 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/25 text-xs font-mono font-semibold">
-              PROJECT 01
-            </span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white">
-              MCU Data Logger – ATmega328P Data Acquisition Board
-            </h3>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="layer-pill layer-top">2-Layer FR4</span>
-            <span class="layer-pill layer-gnd">KiCad 9</span>
-            <span class="layer-pill layer-silk">Battery-Backed</span>
-          </div>
-        </div>
-
-        <!-- Project Grid (Interactive PCB Canvas + Tabs) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-          
-          <!-- Interactive Visualizer (Left Column: 5 Cols) -->
-          <div class="lg:col-span-5 p-6 bg-[#090e1a] border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between pcb-interactive-board">
-            
-            <div>
-              <!-- Layer Toggles -->
-              <div class="flex items-center justify-between mb-3 text-xs font-mono">
-                <span class="text-slate-400 flex items-center gap-1.5">
-                  <i data-lucide="sliders" class="w-3.5 h-3.5 text-emerald-400"></i> Board Layers:
-                </span>
-                <span class="text-[11px] text-slate-500">Toggle to Inspect</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 transition-all" data-layer="all">
-                  All Layers
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="f-cu">
-                  <span class="inline-block w-2 h-2 rounded-full bg-red-400 mr-1"></span>F.Cu (Top)
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="b-cu">
-                  <span class="inline-block w-2 h-2 rounded-full bg-blue-400 mr-1"></span>B.Cu (Bottom)
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="silk">
-                  <span class="inline-block w-2 h-2 rounded-full bg-white mr-1"></span>Silkscreen
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="gnd">
-                  <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-1"></span>GND Pour
-                </button>
-              </div>
-
-              <!-- Interactive Simulated Board Layout (SVG) -->
-              <div class="relative rounded-xl border border-slate-800 bg-[#050b14] p-3 aspect-[4/3] flex items-center justify-center overflow-hidden zoomable-img cursor-pointer" data-caption="MCU Data Logger: ATmega328P-AU 2-Layer Board Layout">
-                
-                <svg viewBox="0 0 380 280" class="w-full h-full">
-                  <!-- Board Outline -->
-                  <rect x="15" y="15" width="350" height="250" rx="12" fill="#042f2e" stroke="#0d9488" stroke-width="2" />
-                  
-                  <!-- Ground Pour Layer -->
-                  <rect class="layer-gnd transition-opacity duration-300" x="25" y="25" width="330" height="230" fill="#0f766e" opacity="0.35" />
-                  
-                  <!-- Mounting Holes -->
-                  <circle cx="32" cy="32" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="348" cy="32" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="32" cy="248" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="348" cy="248" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-
-                  <!-- Bottom Copper Traces (B.Cu Blue) -->
-                  <g class="layer-b-cu transition-opacity duration-300" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.5">
-                    <path d="M 60 70 V 140 H 130" stroke-dasharray="4,2" />
-                    <path d="M 180 190 V 220 H 260" stroke-dasharray="4,2" />
-                    <path d="M 290 80 V 160 H 210" stroke-dasharray="4,2" />
-                  </g>
-
-                  <!-- Top Copper Traces (F.Cu Red) -->
-                  <g class="layer-f-cu transition-opacity duration-300" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" fill="none">
-                    <!-- Power & Reset Rail -->
-                    <path d="M 45 100 H 110 L 130 120" />
-                    <!-- I2C Bus (SDA/SCL) with pullup routing -->
-                    <path d="M 180 155 V 175 H 250 L 265 190" stroke="#f59e0b" stroke-width="1.8" />
-                    <path d="M 175 155 V 170 H 245 L 260 185" stroke="#f59e0b" stroke-width="1.8" />
-                    <!-- Crystal routing (strictly short) -->
-                    <path d="M 125 140 H 95" stroke-width="1.5" />
-                    <path d="M 125 150 H 95" stroke-width="1.5" />
-                  </g>
-
-                  <!-- U1: ATmega328P-AU TQFP-32 Package -->
-                  <rect x="130" y="115" width="55" height="55" rx="3" fill="#0f172a" stroke="#cbd5e1" stroke-width="1" />
-                  <circle cx="137" cy="122" r="2" fill="#ffffff" />
-                  <text x="157" y="146" fill="#94a3b8" font-size="8" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">ATmega328P</text>
-
-                  <!-- TQFP-32 Pads (ENIG Gold) -->
-                  <g fill="#fbbf24">
-                    <!-- Left pads -->
-                    <rect x="122" y="120" width="7" height="3" /><rect x="122" y="127" width="7" height="3" /><rect x="122" y="134" width="7" height="3" /><rect x="122" y="141" width="7" height="3" /><rect x="122" y="148" width="7" height="3" /><rect x="122" y="155" width="7" height="3" />
-                    <!-- Right pads -->
-                    <rect x="186" y="120" width="7" height="3" /><rect x="186" y="127" width="7" height="3" /><rect x="186" y="134" width="7" height="3" /><rect x="186" y="141" width="7" height="3" /><rect x="186" y="148" width="7" height="3" /><rect x="186" y="155" width="7" height="3" />
-                  </g>
-
-                  <!-- U2: DS1337 RTC (SOIC-8) -->
-                  <rect x="235" y="80" width="30" height="22" rx="2" fill="#0f172a" stroke="#cbd5e1" stroke-width="0.8" />
-                  <text x="250" y="94" fill="#cbd5e1" font-size="6" font-family="JetBrains Mono" text-anchor="middle">DS1337</text>
-                  <!-- RTC Pads -->
-                  <rect x="228" y="83" width="5" height="3" fill="#fbbf24" /><rect x="228" y="93" width="5" height="3" fill="#fbbf24" />
-                  <rect x="267" y="83" width="5" height="3" fill="#fbbf24" /><rect x="267" y="93" width="5" height="3" fill="#fbbf24" />
-
-                  <!-- U3 & U4: Dual 24LC1025 EEPROMs (SOIC-8) -->
-                  <rect x="250" y="160" width="30" height="22" rx="2" fill="#0f172a" stroke="#cbd5e1" stroke-width="0.8" />
-                  <text x="265" y="174" fill="#cbd5e1" font-size="5.5" font-family="JetBrains Mono" text-anchor="middle">24LC1025 #1</text>
-                  
-                  <rect x="250" y="195" width="30" height="22" rx="2" fill="#0f172a" stroke="#cbd5e1" stroke-width="0.8" />
-                  <text x="265" y="209" fill="#cbd5e1" font-size="5.5" font-family="JetBrains Mono" text-anchor="middle">24LC1025 #2</text>
-
-                  <!-- Y1: 16MHz Crystal directly next to MCU -->
-                  <rect x="75" y="138" width="20" height="14" rx="3" fill="#1e293b" stroke="#f8fafc" stroke-width="0.7" />
-                  <text x="85" y="147" fill="#f8fafc" font-size="5" font-family="JetBrains Mono" text-anchor="middle">16MHz</text>
-
-                  <!-- Decoupling Capacitors (0805) close to ICs -->
-                  <rect x="110" y="116" width="7" height="4" fill="#78350f" stroke="#fbbf24" stroke-width="0.7" />
-                  <rect x="190" y="112" width="7" height="4" fill="#78350f" stroke="#fbbf24" stroke-width="0.7" />
-
-                  <!-- ICSP Header (2x3 Pin Header) -->
-                  <g class="layer-silk" stroke="#f8fafc" fill="#0f172a" stroke-width="0.7">
-                    <rect x="40" y="190" width="24" height="36" rx="2" />
-                    <circle cx="46" cy="198" r="2.5" fill="#fbbf24" /><circle cx="58" cy="198" r="2.5" fill="#fbbf24" />
-                    <circle cx="46" cy="208" r="2.5" fill="#fbbf24" /><circle cx="58" cy="208" r="2.5" fill="#fbbf24" />
-                    <circle cx="46" cy="218" r="2.5" fill="#fbbf24" /><circle cx="58" cy="218" r="2.5" fill="#fbbf24" />
-                  </g>
-                  <text class="layer-silk" x="52" y="238" fill="#f8fafc" font-size="6" font-family="JetBrains Mono" text-anchor="middle">ICSP</text>
-
-                  <!-- Silkscreen Labels -->
-                  <g class="layer-silk" fill="#f8fafc" font-family="JetBrains Mono">
-                    <text x="190" y="42" font-size="8" font-weight="bold" text-anchor="middle">MCU DATA LOGGER v1.0</text>
-                    <text x="190" y="52" font-size="6" fill="#94a3b8" text-anchor="middle">ATmega328P-AU • DS1337 • 2x 24LC1025</text>
-                  </g>
-                </svg>
-
-                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-slate-900/90 text-[10px] font-mono text-slate-400 border border-slate-800">
-                  Click to Expand
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick Specs Row -->
-            <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-800 text-xs font-mono">
-              <div class="bg-slate-900/60 p-2 rounded border border-slate-800/80">
-                <span class="text-slate-500 block text-[10px]">TOTAL EEPROM</span>
-                <span class="text-emerald-400 font-semibold">256 KB (I2C Bus)</span>
-              </div>
-              <div class="bg-slate-900/60 p-2 rounded border border-slate-800/80">
-                <span class="text-slate-500 block text-[10px]">REAL TIME CLOCK</span>
-                <span class="text-amber-400 font-semibold">DS1337 + Battery</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Deep-Dive Tabs (Right Column: 7 Cols) -->
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
-            
-            <div>
-              <!-- Tab Navigation -->
-              <div class="flex items-center gap-2 border-b border-slate-800 pb-3 mb-6 overflow-x-auto">
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-emerald-500 text-emerald-400 bg-emerald-500/10 transition-all whitespace-nowrap" data-tab="tab-overview">
-                  Overview & Goals
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="tab-schematic">
-                  Schematic Architecture
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="tab-layout">
-                  Layout & DFM Strategy
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="tab-specs">
-                  Hardware Specifications
-                </button>
-              </div>
-
-              <!-- PANEL 1: OVERVIEW -->
-              <div class="project-tab-panel space-y-4" data-panel="tab-overview">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-                  Autonomous Battery-Backed Data Acquisition Unit
-                </h4>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                  Engineered in KiCad 9 to function as a compact, self-contained microcontroller data logging system. It acquires sensor telemetry and securely logs timestamps with millisecond precision onto dual non-volatile EEPROM memory chips even during power failures.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                    <span class="text-xs font-mono text-emerald-400 font-semibold block mb-1">Key Subsystems</span>
-                    <p class="text-xs text-slate-300">
-                      ATmega328P-AU Core, Maxim DS1337 Real-Time Clock, dual 24LC1025 EEPROMs, coin-cell backup circuit, and breakout headers for I2C, UART, GPIO, and ICSP.
-                    </p>
-                  </div>
-                  <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                    <span class="text-xs font-mono text-cyan-400 font-semibold block mb-1">Design Milestones</span>
-                    <p class="text-xs text-slate-300">
-                      Structured hierarchical sheets, custom library management, 100% clean ERC run, low-inductance ground pour, and production Gerber generation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 2: SCHEMATIC ARCHITECTURE -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="tab-schematic">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="git-branch" class="w-5 h-5 text-cyan-400"></i>
-                  Hierarchical KiCad Schematic Design
-                </h4>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                  Rather than a cluttered flat schematic, the design was organized hierarchically into clean functional sheets:
-                </p>
-
-                <div class="space-y-2.5 text-xs font-mono">
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-emerald-400 font-bold">01. MCU Sheet:</span>
-                    <span class="text-slate-300">ATmega328P-AU power pins, reset circuit with pull-up resistor and tactile switch, 16MHz crystal with matched load capacitors, and ICSP programming header.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-cyan-400 font-bold">02. RTC Sheet:</span>
-                    <span class="text-slate-300">DS1337 real-time clock connected to dedicated 32.768 kHz watch crystal, coin cell diode-OR backup power path, and I2C address pins.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-amber-400 font-bold">03. Memory Sheet:</span>
-                    <span class="text-slate-300">Dual 24LC1025 EEPROMs mapped with distinct hardware A0 address pins to avoid bus conflicts, with 4.7kΩ I2C pull-ups on SDA/SCL.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-purple-400 font-bold">04. ERC Validation:</span>
-                    <span class="text-slate-300">Applied proper PWR_FLAG symbols to power nets, eliminated unassigned pins, and achieved a 0-error, 0-warning ERC check.</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 3: LAYOUT & DFM STRATEGY -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="tab-layout">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
-                  2-Layer PCB Layout & Signal Integrity Practices
-                </h4>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-emerald-400 font-bold block mb-1">Decoupling Placement</span>
-                    <p class="text-slate-300">
-                      100nF ceramic decoupling capacitors positioned directly adjacent to MCU VCC and AVCC pins (< 2mm) to ensure high-frequency ripple filtering before entering the IC.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-amber-400 font-bold block mb-1">Oscillator Loop Area</span>
-                    <p class="text-slate-300">
-                      16MHz crystal placed directly beside XTAL1/XTAL2 with symmetrical trace lengths and an isolated ground guard ring to suppress parasitic clock EMI.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-cyan-400 font-bold block mb-1">Solid Return Path</span>
-                    <p class="text-slate-300">
-                      Bottom copper layer (B.Cu) poured as a contiguous ground plane to ensure low-impedance return current loops for both digital clocks and I2C communication.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-purple-400 font-bold block mb-1">DFM & Silkscreen</span>
-                    <p class="text-slate-300">
-                      Thermal reliefs configured on all ground pads for reliable hand and reflow soldering. Legible silkscreen pin labels for UART, I2C, and ICSP headers.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 4: HARDWARE SPECIFICATIONS -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="tab-specs">
-                <h4 class="text-lg font-bold text-white">Board Engineering Specifications</h4>
-                
-                <div class="overflow-x-auto">
-                  <table class="w-full text-xs font-mono text-left border border-slate-800 rounded">
-                    <thead class="bg-slate-900 text-slate-400 border-b border-slate-800">
-                      <tr>
-                        <th class="p-2.5">Parameter</th>
-                        <th class="p-2.5">Design Specification</th>
-                        <th class="p-2.5">Engineering Rationale</th>
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800 text-slate-300">
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Layer Stack</td>
-                        <td class="p-2.5 text-emerald-400">2-Layer FR4 (1.6mm thickness)</td>
-                        <td class="p-2.5 text-slate-400">Cost-effective standard fabrication</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Microcontroller</td>
-                        <td class="p-2.5">ATmega328P-AU (TQFP-32)</td>
-                        <td class="p-2.5 text-slate-400">Compact surface-mount profile</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Clock Source</td>
-                        <td class="p-2.5">16MHz Quartz Crystal + 22pF caps</td>
-                        <td class="p-2.5 text-slate-400">Accurate timing for serial baud rates</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Memory Capacity</td>
-                        <td class="p-2.5 text-cyan-400">256 KB (2x 24LC1025)</td>
-                        <td class="p-2.5 text-slate-400">I2C 400kHz high-capacity logging</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Power Domains</td>
-                        <td class="p-2.5">5.0V Main / 3.0V Coin Cell</td>
-                        <td class="p-2.5 text-slate-400">Seamless RTC battery backup</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Design Rules</td>
-                        <td class="p-2.5">0.25mm trace / 0.25mm clearance</td>
-                        <td class="p-2.5 text-slate-400">Standard standard low-cost fab yield</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Card Footer Links -->
-            <div class="mt-8 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
-              <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-                <i data-lucide="folder-check" class="w-4 h-4 text-emerald-400"></i>
-                <span>Gerbers, Drill Files, & KiCad Project Ready</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <a href="https://github.com/siddharthkote25/pcb-protfolio" target="_blank" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono flex items-center gap-1.5 transition-all">
-                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
-                  <span>GitHub Repository</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- ================= PROJECT 2: SAFESTEPS ESP32 DEVICE ================= -->
-      <div class="project-card hw-card rounded-2xl border border-slate-800 overflow-hidden">
-        
-        <!-- Project Top Bar -->
-        <div class="px-6 py-5 bg-slate-900/90 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/25 text-xs font-mono font-semibold">
-              PROJECT 02
-            </span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white">
-              SafeSteps – ESP32-Based Personal Safety Device
-            </h3>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="layer-pill layer-top">2-Layer FR4</span>
-            <span class="layer-pill layer-gnd">4G LTE + GPS</span>
-            <span class="layer-pill layer-bottom">Li-Po Powered</span>
-          </div>
-        </div>
-
-        <!-- Project Grid (Interactive PCB Canvas + Tabs) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-          
-          <!-- Interactive Visualizer (Left Column: 5 Cols) -->
-          <div class="lg:col-span-5 p-6 bg-[#090e1a] border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between pcb-interactive-board">
-            
-            <div>
-              <!-- Layer Toggles -->
-              <div class="flex items-center justify-between mb-3 text-xs font-mono">
-                <span class="text-slate-400 flex items-center gap-1.5">
-                  <i data-lucide="sliders" class="w-3.5 h-3.5 text-cyan-400"></i> Board Layers:
-                </span>
-                <span class="text-[11px] text-slate-500">Toggle to Inspect</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 transition-all" data-layer="all">
-                  All Layers
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="f-cu">
-                  <span class="inline-block w-2 h-2 rounded-full bg-red-400 mr-1"></span>F.Cu (Top)
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="b-cu">
-                  <span class="inline-block w-2 h-2 rounded-full bg-blue-400 mr-1"></span>B.Cu (Bottom)
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="silk">
-                  <span class="inline-block w-2 h-2 rounded-full bg-white mr-1"></span>Silkscreen
-                </button>
-                <button class="layer-btn px-2.5 py-1 rounded text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200 transition-all" data-layer="gnd">
-                  <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-1"></span>GND Pour
-                </button>
-              </div>
-
-              <!-- Interactive Simulated Board Layout (SVG) -->
-              <div class="relative rounded-xl border border-slate-800 bg-[#050b14] p-3 aspect-[4/3] flex items-center justify-center overflow-hidden zoomable-img cursor-pointer" data-caption="SafeSteps ESP32 Safety Device: 2-Layer Board Layout">
-                
-                <svg viewBox="0 0 380 280" class="w-full h-full">
-                  <!-- Board Substrate FR4 -->
-                  <rect x="15" y="15" width="350" height="250" rx="14" fill="#064e3b" stroke="#059669" stroke-width="2" />
-                  
-                  <!-- Ground Pour Layer -->
-                  <rect class="layer-gnd transition-opacity duration-300" x="25" y="25" width="330" height="230" fill="#047857" opacity="0.35" />
-                  
-                  <!-- Mounting Holes -->
-                  <circle cx="32" cy="32" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="348" cy="32" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="32" cy="248" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-                  <circle cx="348" cy="248" r="7" fill="#050b14" stroke="#d97706" stroke-width="1.8" />
-
-                  <!-- Bottom Copper (B.Cu Blue) -->
-                  <g class="layer-b-cu transition-opacity duration-300" stroke="#3b82f6" stroke-width="2.2" stroke-dasharray="4,2" fill="none" opacity="0.5">
-                    <path d="M 60 110 V 170 H 120" />
-                    <path d="M 210 200 V 230 H 300" />
-                    <path d="M 170 50 H 260 V 90" />
-                  </g>
-
-                  <!-- Top Copper (F.Cu Red) - Power & UART Signal Traces -->
-                  <g class="layer-f-cu transition-opacity duration-300" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" fill="none">
-                    <!-- Power Rail from HT7333 LDO to ESP32 (Thick net class 0.6mm) -->
-                    <path d="M 60 215 H 100 V 150 H 140" stroke-width="3.5" />
-                    <!-- UART GPS Traces (TX/RX pairs) -->
-                    <path d="M 180 85 V 65 H 230 V 80" stroke="#38bdf8" stroke-width="1.6" />
-                    <path d="M 186 85 V 60 H 236 V 80" stroke="#38bdf8" stroke-width="1.6" />
-                    <!-- 4G LTE UART Lines -->
-                    <path d="M 195 140 H 250" stroke="#f59e0b" stroke-width="1.8" />
-                    <path d="M 195 148 H 250" stroke="#f59e0b" stroke-width="1.8" />
-                  </g>
-
-                  <!-- ESP32-WROOM-32 Module -->
-                  <rect x="135" y="85" width="60" height="85" rx="3" fill="#1e293b" stroke="#cbd5e1" stroke-width="1" />
-                  <rect x="140" y="88" width="50" height="22" rx="2" fill="#0f172a" stroke="#475569" stroke-width="0.8" />
-                  <text x="165" y="102" fill="#94a3b8" font-size="7" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">PCB ANTENNA</text>
-                  <text x="165" y="135" fill="#f8fafc" font-size="8" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">ESP32</text>
-                  <text x="165" y="145" fill="#64748b" font-size="6" font-family="JetBrains Mono" text-anchor="middle">WROOM-32</text>
-
-                  <!-- Castellation Pads for ESP32 -->
-                  <g fill="#fbbf24">
-                    <rect x="132" y="115" width="4" height="3" /><rect x="132" y="122" width="4" height="3" /><rect x="132" y="129" width="4" height="3" /><rect x="132" y="136" width="4" height="3" /><rect x="132" y="143" width="4" height="3" /><rect x="132" y="150" width="4" height="3" /><rect x="132" y="157" width="4" height="3" />
-                    <rect x="194" y="115" width="4" height="3" /><rect x="194" y="122" width="4" height="3" /><rect x="194" y="129" width="4" height="3" /><rect x="194" y="136" width="4" height="3" /><rect x="194" y="143" width="4" height="3" /><rect x="194" y="150" width="4" height="3" /><rect x="194" y="157" width="4" height="3" />
-                  </g>
-
-                  <!-- NEO-6M GPS Module -->
-                  <rect x="235" y="65" width="55" height="45" rx="3" fill="#0f172a" stroke="#cbd5e1" stroke-width="0.8" />
-                  <rect x="245" y="72" width="35" height="20" rx="1" fill="#334155" />
-                  <text x="262" y="85" fill="#f8fafc" font-size="6.5" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">NEO-6M</text>
-                  <text x="262" y="103" fill="#94a3b8" font-size="5" font-family="JetBrains Mono" text-anchor="middle">GPS RECEIVER</text>
-
-                  <!-- A7670C 4G LTE Module -->
-                  <rect x="245" y="130" width="70" height="65" rx="3" fill="#0f172a" stroke="#cbd5e1" stroke-width="1" />
-                  <rect x="252" y="138" width="56" height="38" rx="2" fill="#334155" />
-                  <text x="280" y="155" fill="#f8fafc" font-size="7" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">A7670C</text>
-                  <text x="280" y="165" fill="#38bdf8" font-size="5.5" font-family="JetBrains Mono" text-anchor="middle">4G LTE CAT-1</text>
-
-                  <!-- HT7333 3.3V LDO Regulator (SOT-89) -->
-                  <rect x="45" y="200" width="20" height="15" rx="1.5" fill="#0f172a" stroke="#cbd5e1" stroke-width="0.7" />
-                  <rect x="42" y="204" width="3" height="7" fill="#fbbf24" />
-                  <rect x="65" y="202" width="3" height="3" fill="#fbbf24" /><rect x="65" y="209" width="3" height="3" fill="#fbbf24" />
-                  <text x="55" y="210" fill="#f8fafc" font-size="5" font-family="JetBrains Mono" text-anchor="middle">HT7333</text>
-
-                  <!-- Tactile SOS Pushbutton -->
-                  <circle cx="65" cy="75" r="14" fill="#991b1b" stroke="#f87171" stroke-width="1.5" />
-                  <circle cx="65" cy="75" r="8" fill="#ef4444" />
-                  <text x="65" y="78" fill="#ffffff" font-size="7" font-family="JetBrains Mono" font-weight="bold" text-anchor="middle">SOS</text>
-
-                  <!-- Piezo Buzzer -->
-                  <circle cx="65" cy="130" r="12" fill="#1e293b" stroke="#cbd5e1" stroke-width="1" />
-                  <circle cx="65" cy="130" r="3" fill="#0f172a" />
-                  <text x="65" y="148" fill="#cbd5e1" font-size="5.5" font-family="JetBrains Mono" text-anchor="middle">BUZZER</text>
-
-                  <!-- Silkscreen Markings -->
-                  <g class="layer-silk" fill="#f8fafc" font-family="JetBrains Mono">
-                    <text x="190" y="40" font-size="8.5" font-weight="bold" text-anchor="middle">SAFESTEPS IoT PCB v1.0</text>
-                    <text x="190" y="50" font-size="6" fill="#94a3b8" text-anchor="middle">ESP32 • NEO-6M • A7670C 4G</text>
-                    <text x="55" y="228" font-size="5.5">3.7V Li-Po In</text>
-                  </g>
-                </svg>
-
-                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-slate-900/90 text-[10px] font-mono text-slate-400 border border-slate-800">
-                  Click to Expand
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick Specs Row -->
-            <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-800 text-xs font-mono">
-              <div class="bg-slate-900/60 p-2 rounded border border-slate-800/80">
-                <span class="text-slate-500 block text-[10px]">WIRELESS CONNECTIVITY</span>
-                <span class="text-cyan-400 font-semibold">4G LTE + GPS + WiFi</span>
-              </div>
-              <div class="bg-slate-900/60 p-2 rounded border border-slate-800/80">
-                <span class="text-slate-500 block text-[10px]">POWER REGULATION</span>
-                <span class="text-emerald-400 font-semibold">HT7333 3.3V Low-Dropout</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Deep-Dive Tabs (Right Column: 7 Cols) -->
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
-            
-            <div>
-              <!-- Tab Navigation -->
-              <div class="flex items-center gap-2 border-b border-slate-800 pb-3 mb-6 overflow-x-auto">
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-emerald-500 text-emerald-400 bg-emerald-500/10 transition-all whitespace-nowrap" data-tab="safesteps-overview">
-                  Overview & Goals
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="safesteps-schematic">
-                  Schematic & Peripherals
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="safesteps-layout">
-                  Net Classes & Power Strategy
-                </button>
-                <button class="project-tab-btn px-3 py-1.5 rounded text-xs font-mono font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition-all whitespace-nowrap" data-tab="safesteps-specs">
-                  Hardware Specifications
-                </button>
-              </div>
-
-              <!-- PANEL 1: OVERVIEW -->
-              <div class="project-tab-panel space-y-4" data-panel="safesteps-overview">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="shield-alert" class="w-5 h-5 text-cyan-400"></i>
-                  Cellular IoT Wearable for Rapid Emergency Dispatch
-                </h4>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                  SafeSteps is a battery-powered personal safety device engineered around an <strong class="text-white">ESP32 SoC</strong>. It continuously monitors for emergency triggers via an SOS button; upon activation, it acquires real-time satellite coordinates from a <strong class="text-white">NEO-6M GPS receiver</strong> and transmits distress alerts over cellular networks using an <strong class="text-white">A7670C 4G LTE module</strong>, while triggering an onboard buzzer and status LED.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                    <span class="text-xs font-mono text-cyan-400 font-semibold block mb-1">Multi-Radio Integration</span>
-                    <p class="text-xs text-slate-300">
-                      Co-locating 4G LTE cellular, GPS receiver, and 2.4GHz WiFi/BLE with sufficient RF keepout zones and return path isolation.
-                    </p>
-                  </div>
-                  <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                    <span class="text-xs font-mono text-emerald-400 font-semibold block mb-1">Low-Power Battery Life</span>
-                    <p class="text-xs text-slate-300">
-                      Regulated by an HT7333 ultra-low quiescent current LDO directly fed from a 3.7V Li-Po cell for extended field reliability.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 2: SCHEMATIC ARCHITECTURE -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="safesteps-schematic">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="git-branch" class="w-5 h-5 text-cyan-400"></i>
-                  Schematic Capture & Custom Symbol Engineering
-                </h4>
-                <p class="text-slate-300 text-sm leading-relaxed">
-                  Created custom KiCad symbols and footprint models directly from component datasheets for parts without stock library definitions:
-                </p>
-
-                <div class="space-y-2.5 text-xs font-mono">
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-cyan-400 font-bold">01. Dual UART Channels:</span>
-                    <span class="text-slate-300">Configured UART1 for NEO-6M GPS communication and UART2 for AT-command parsing with the A7670C 4G modem, ensuring non-blocking concurrent data streams.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-emerald-400 font-bold">02. Power & LDO Regulation:</span>
-                    <span class="text-slate-300">Implemented HT7333 3.3V linear regulation with low ESR input/output tantalums and ceramic bulk capacitors to handle sudden transmitter surge currents.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-amber-400 font-bold">03. SOS & Alert Interfaces:</span>
-                    <span class="text-slate-300">Hardware pull-up debouncing on emergency button to avoid false triggers; transistor-switched buzzer circuit for audible alarms without drawing excessive MCU current.</span>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/70 border border-slate-800 flex items-start gap-3">
-                    <span class="text-purple-400 font-bold">04. ERC Verification:</span>
-                    <span class="text-slate-300">Validated pin types (Input, Output, Power Output) to maintain strict signal integrity and prevent floating gates.</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 3: LAYOUT & DFM STRATEGY -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="safesteps-layout">
-                <h4 class="text-lg font-bold text-white flex items-center gap-2">
-                  <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
-                  Net Classes, Trace Sizing & Layout Rules
-                </h4>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-cyan-400 font-bold block mb-1">Net Class Segmentation</span>
-                    <p class="text-slate-300">
-                      Established separate KiCad Net Classes: 0.6mm-0.8mm width for Li-Po and 3.3V power rails vs 0.25mm width for high-density logic signals.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-emerald-400 font-bold block mb-1">Antenna Keepout Zones</span>
-                    <p class="text-slate-300">
-                      Preserved copper-free keepout zones underneath the ESP32 PCB trace antenna to avoid detuning and RF attenuation.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-amber-400 font-bold block mb-1">Thermal & Current Bursts</span>
-                    <p class="text-slate-300">
-                      Poured heavy copper zones around the A7670C modem and HT7333 regulator to dissipate heat during 4G transmission bursts.
-                    </p>
-                  </div>
-                  <div class="p-3 rounded bg-slate-900/80 border border-slate-800">
-                    <span class="font-mono text-purple-400 font-bold block mb-1">DRC & Gerber Verification</span>
-                    <p class="text-slate-300">
-                      Executed DRC with manufacturing clearances (0.2mm track-to-track, 0.3mm drill size), verifying all Gerbers in KiCad Gerbview.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 4: HARDWARE SPECIFICATIONS -->
-              <div class="project-tab-panel hidden space-y-4" data-panel="safesteps-specs">
-                <h4 class="text-lg font-bold text-white">Board Engineering Specifications</h4>
-                
-                <div class="overflow-x-auto">
-                  <table class="w-full text-xs font-mono text-left border border-slate-800 rounded">
-                    <thead class="bg-slate-900 text-slate-400 border-b border-slate-800">
-                      <tr>
-                        <th class="p-2.5">Parameter</th>
-                        <th class="p-2.5">Design Specification</th>
-                        <th class="p-2.5">Engineering Rationale</th>
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800 text-slate-300">
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Layer Stack</td>
-                        <td class="p-2.5 text-emerald-400">2-Layer FR4 (1.6mm thickness)</td>
-                        <td class="p-2.5 text-slate-400">Compact handheld form factor</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Main Processor</td>
-                        <td class="p-2.5">ESP32-WROOM-32 (Xtensa Dual-Core)</td>
-                        <td class="p-2.5 text-slate-400">Integrated wireless stack & rich UARTs</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Cellular Modem</td>
-                        <td class="p-2.5 text-cyan-400">A7670C 4G LTE Cat-1</td>
-                        <td class="p-2.5 text-slate-400">Global bands, high reliability SMS & data</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">GNSS Satellite</td>
-                        <td class="p-2.5 text-amber-400">u-blox NEO-6M Receiver</td>
-                        <td class="p-2.5 text-slate-400">High sensitivity positioning</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Power Management</td>
-                        <td class="p-2.5">HT7333 LDO (3.3V Output)</td>
-                        <td class="p-2.5 text-slate-400">Ultra-low quiescent current for battery</td>
-                      </tr>
-                      <tr>
-                        <td class="p-2.5 text-white font-semibold">Alarm Actuation</td>
-                        <td class="p-2.5">SOS tactile switch, Buzzer, LED</td>
-                        <td class="p-2.5 text-slate-400">Instant sensory feedback & dispatch</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Card Footer Links -->
-            <div class="mt-8 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
-              <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
-                <i data-lucide="folder-check" class="w-4 h-4 text-cyan-400"></i>
-                <span>Gerbers, Drill Files, & KiCad Project Ready</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <a href="https://github.com/siddharthkote25/pcb-protfolio" target="_blank" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono flex items-center gap-1.5 transition-all">
-                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
-                  <span>GitHub Repository</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= HARDWARE DESIGN WORKFLOW ================= -->
-  <section id="workflow" class="py-20 border-t border-slate-800/80 bg-[#090d18]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-emerald-400 text-xs font-mono border border-slate-700">
-          <i data-lucide="git-commit" class="w-3.5 h-3.5"></i>
-          <span>METHODICAL ENGINEERING APPROACH</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Standard PCB Design Lifecycle
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Every board follows a disciplined, repeatable engineering progression to prevent respins and guarantee first-pass bring-up.
-        </p>
-      </div>
-
-      <!-- 4-Step Process Timeline -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Step 1 -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 relative">
-          <div class="text-3xl font-extrabold font-mono text-slate-700 mb-3">01</div>
-          <h3 class="text-base font-bold text-white mb-2">Requirements & Part Selection</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Component research against vendor datasheets. Calculating voltage tolerances, decoupling capacitor values, crystal load capacitance, and pull-up resistor sizing.
-          </p>
-          <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/20 inline-block">
-            Datasheet Analysis
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 relative">
-          <div class="text-3xl font-extrabold font-mono text-slate-700 mb-3">02</div>
-          <h3 class="text-base font-bold text-white mb-2">Hierarchical Schematic & ERC</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Structuring circuits into logical sheets. Net labeling, custom symbol drafting, power flag assignment, and running Electrical Rule Checks (ERC) until 0 errors remain.
-          </p>
-          <div class="text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20 inline-block">
-            ERC Verification
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 relative">
-          <div class="text-3xl font-extrabold font-mono text-slate-700 mb-3">03</div>
-          <h3 class="text-base font-bold text-white mb-2">Constraint-Driven PCB Layout</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Strategic part placement (connectors on edge, decoupling next to VCC pins). Routing with defined net classes, prioritizing unbroken ground reference planes.
-          </p>
-          <div class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20 inline-block">
-            Signal & Power Integrity
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="hw-card p-6 rounded-xl border border-slate-800 relative">
-          <div class="text-3xl font-extrabold font-mono text-slate-700 mb-3">04</div>
-          <h3 class="text-base font-bold text-white mb-2">DRC & Fabrication Release</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Running Design Rule Check against fab house constraints. Generating RS-274X Gerbers, Excellon drill files, and silkscreen verification in Gerbview.
-          </p>
-          <div class="text-[11px] font-mono text-purple-400 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20 inline-block">
-            DFM & Gerber Export
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= EDUCATION & CERTIFICATIONS ================= -->
-  <section id="education" class="py-20 border-t border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Education (6 Cols) -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-emerald-400 text-xs font-mono border border-slate-700">
-            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
-            <span>ACADEMIC BACKGROUND</span>
-          </div>
-          <h2 class="text-3xl font-extrabold text-white tracking-tight">
-            Education
-          </h2>
-
-          <div class="hw-card p-6 rounded-xl border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <h3 class="text-lg font-bold text-white">Nutan College of Engineering and Research</h3>
-              <span class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">2022 – 2026</span>
-            </div>
-            <p class="text-sm font-medium text-slate-300">
-              Bachelor of Technology (B.Tech) in Electronics and Communication Engineering
-            </p>
-            <div class="text-xs text-slate-400 flex items-center gap-1.5 font-mono">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i>
-              <span>Pune, Maharashtra, India</span>
-            </div>
-            <p class="text-xs text-slate-400 leading-relaxed pt-2 border-t border-slate-800/80">
-              Comprehensive coursework in Circuit Theory, Analog & Digital Electronics, Microcontrollers, Microprocessors, Signals & Systems, and Telecommunication Networks.
-            </p>
-          </div>
-        </div>
-
-        <!-- Certifications (6 Cols) -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-cyan-400 text-xs font-mono border border-slate-700">
-            <i data-lucide="award" class="w-3.5 h-3.5"></i>
-            <span>CREDENTIALS & TRAINING</span>
-          </div>
-          <h2 class="text-3xl font-extrabold text-white tracking-tight">
-            Certifications
-          </h2>
-
-          <div class="space-y-4">
-            
-            <!-- Cert 1 -->
-            <div class="hw-card p-5 rounded-xl border border-slate-800 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            <!-- Key Metrics Bar -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-[#1F2937] max-w-lg">
+              <div>
+                <div class="text-xl sm:text-2xl font-bold font-mono text-[#22C55E]">KiCad 9</div>
+                <div class="text-xs text-[#94A3B8]">Primary ECAD Suite</div>
               </div>
               <div>
-                <h3 class="text-base font-bold text-white">PCB Design with KiCad – Updated for KiCad 9</h3>
-                <p class="text-xs text-slate-400 font-mono mt-0.5">Udemy Verified Course</p>
-                <p class="text-xs text-slate-300 mt-2">
-                  In-depth training on modern KiCad 9 features, hierarchical multi-sheet design, footprint assignment, design rules, net classes, and Gerber verification.
-                </p>
-              </div>
-            </div>
-
-            <!-- Cert 2 -->
-            <div class="hw-card p-5 rounded-xl border border-slate-800 flex items-start gap-4">
-              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
-                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                <div class="text-xl sm:text-2xl font-bold font-mono text-white">2 Boards</div>
+                <div class="text-xs text-[#94A3B8]">End-to-End Designed</div>
               </div>
               <div>
-                <h3 class="text-base font-bold text-white">PCB Design Course</h3>
-                <p class="text-xs text-slate-400 font-mono mt-0.5">Simplilearn Verified Course</p>
-                <p class="text-xs text-slate-300 mt-2">
-                  Foundations of printed circuit board fabrication, layer stackup principles, component mounting techniques, and DFM/DFA standards.
-                </p>
+                <div class="text-xl sm:text-2xl font-bold font-mono text-cyan-400">Pune, India</div>
+                <div class="text-xs text-[#94A3B8]">Location (2026 Grad)</div>
               </div>
             </div>
 
+          </div>
+
+          <!-- Hero Visual: Real Board 3D Render -->
+          <div class="lg:col-span-5">
+            <div class="hw-card rounded-xl p-4 shadow-2xl relative">
+              
+              <!-- Card Top Bar -->
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1F2937] text-xs font-mono">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                  <span class="text-slate-300 font-semibold">MCU Data Logger</span>
+                </div>
+                <span class="text-[#22C55E] flex items-center gap-1 font-mono text-[11px]">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> KiCad 9 3D Render
+                </span>
+              </div>
+
+              <!-- Real Board Render Image -->
+              <div class="relative bg-[#070D18] rounded-lg overflow-hidden border border-[#1F2937] aspect-[4/3] flex items-center justify-center group">
+                <img src="assets/images/projects/data-logger/3d-render.png" alt="MCU Data Logger 3D KiCad Board Render" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-[#0B1120]/80 backdrop-blur border border-[#1F2937] text-[11px] font-mono text-slate-300">
+                  ATmega328P • RTC • 2× EEPROM
+                </div>
+              </div>
+
+              <!-- Board Quick Specs -->
+              <div class="grid grid-cols-2 gap-2 mt-3 pt-2 text-[11px] font-mono text-[#94A3B8]">
+                <div class="bg-[#0B1120] p-2 rounded border border-[#1F2937]">
+                  <span class="text-slate-400 block">Stackup:</span>
+                  <span class="text-white font-medium">2-Layer FR-4 (1.6mm)</span>
+                </div>
+                <div class="bg-[#0B1120] p-2 rounded border border-[#1F2937]">
+                  <span class="text-slate-400 block">Verification:</span>
+                  <span class="text-[#22C55E] font-medium">DRC: 0 Errors • ERC: Pass</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. ABOUT ================= -->
+    <section id="about" class="py-16 md:py-20 border-t border-[#1F2937] bg-[#0E1526]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="user" class="w-4 h-4"></i> Professional Background
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">About Me</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Hardware-focused engineer dedicated to PCB layout precision, schematic clarity, and manufacturability.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Narrative Column -->
+          <div class="md:col-span-7 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p>
+              I am an <strong class="text-white">Electronics and Communication Engineering graduate (Batch of 2026)</strong> from Nutan College of Engineering and Research, Pune, with a dedicated focus on PCB design and electronic hardware.
+            </p>
+            <p>
+              Rather than generic software development, my passion is at the hardware layer: turning circuit schematics into fabricated, reliable printed circuit boards. Using <strong class="text-[#22C55E]">KiCad 9</strong>, I have completed two end-to-end hardware designs from initial schematic capture to fabrication-ready Gerber packages.
+            </p>
+            <p>
+              My design work covers hierarchical schematic organization, footprint assignment and custom creation, component placement optimized for thermal and signal integrity, trace routing, decoupling capacitor placement right at IC pins, ground plane management, and thorough ERC and DRC rule verification.
+            </p>
+            <p>
+              I am seeking an <strong class="text-white">entry-level PCB Design Engineer / Hardware Engineer</strong> position where I can apply my schematic capture, layout, and hardware bring-up skills to real-world embedded products.
+            </p>
+
+            <div class="pt-4 flex flex-wrap gap-4">
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#22C55E] hover:bg-[#16A34A] text-slate-950 font-semibold text-sm transition-all">
+                <i data-lucide="mail" class="w-4 h-4"></i> Get In Touch
+              </a>
+              <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#111827] hover:bg-[#1F2937] text-white border border-[#1F2937] text-sm font-medium transition-all">
+                <i data-lucide="folder-git-2" class="w-4 h-4 text-[#22C55E]"></i> Inspect My Boards
+              </a>
+            </div>
+          </div>
+
+          <!-- Education & Credentials Card -->
+          <div class="md:col-span-5 space-y-4">
+            
+            <!-- Education Card -->
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[#22C55E]/10 flex items-center justify-center text-[#22C55E]">
+                  <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Education</h3>
+                  <span class="text-xs text-[#94A3B8]">B.Tech in ECE</span>
+                </div>
+              </div>
+              <p class="font-semibold text-white text-sm">Nutan College of Engineering and Research</p>
+              <p class="text-xs text-[#94A3B8]">Pune, Maharashtra, India</p>
+              <div class="mt-2 flex items-center justify-between text-xs font-mono text-[#22C55E] pt-2 border-t border-[#1F2937]">
+                <span>Electronics & Communication</span>
+                <span>2022 – 2026</span>
+              </div>
+            </div>
+
+            <!-- Certifications Card -->
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                  <i data-lucide="award" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Certifications</h3>
+                  <span class="text-xs text-[#94A3B8]">Verified Hardware Training</span>
+                </div>
+              </div>
+              <ul class="space-y-3 text-xs text-slate-300">
+                <li class="p-2.5 rounded bg-[#0B1120] border border-[#1F2937]">
+                  <div class="font-medium text-white">PCB Design with KiCad – Updated for KiCad 9</div>
+                  <div class="text-[#94A3B8] font-mono mt-0.5">Udemy</div>
+                </li>
+                <li class="p-2.5 rounded bg-[#0B1120] border border-[#1F2937]">
+                  <div class="font-medium text-white">PCB Design Course</div>
+                  <div class="text-[#94A3B8] font-mono mt-0.5">Simplilearn</div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 4. SKILLS ================= -->
+    <section id="skills" class="py-16 md:py-20 border-t border-[#1F2937]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="sliders" class="w-4 h-4"></i> Technical Capabilities
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Technical Skills</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Verified skills strictly based on my hands-on KiCad board projects and academic coursework.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Category 1: PCB DESIGN -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-[#22C55E]/10 flex items-center justify-center text-[#22C55E]">
+                <i data-lucide="layers" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">PCB DESIGN</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>KiCad 9 Layout Editor</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>2-Layer PCB Layout</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Component Placement & Floorplanning</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Track Routing & 45° Mitering</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Net Classes & Trace Width Rules</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Copper Fills & Ground Zones</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Vias, Pads & Annular Rings</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>3D Inspection in KiCad</li>
+            </ul>
+          </div>
+
+          <!-- Category 2: SCHEMATIC & LAYOUT -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                <i data-lucide="git-branch" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">SCHEMATIC & LAYOUT</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>KiCad Schematic Capture (Eeschema)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Hierarchical Schematic Sheets</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Symbol Creation & Library Mgmt</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Footprint Assignment & Creation</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Net Labels & Global Net Connections</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Power Flags & Power Ports (PWR_FLAG)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Component Selection (SMD & THT)</li>
+            </ul>
+          </div>
+
+          <!-- Category 3: ELECTRONICS FUNDAMENTALS -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">ELECTRONICS</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Ohm's Law & Circuit Analysis</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Resistors & Capacitor Sizing</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Crystals & Load Capacitors</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Decoupling & Bypass Capacitors</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Linear Voltage Regulators (HT7333 3.3V)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Pull-up & Pull-down Resistors (I2C/Reset)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Power Supply Filtering & Battery Input</li>
+            </ul>
+          </div>
+
+          <!-- Category 4: EMBEDDED / MCU & INTERFACES -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">EMBEDDED / MCU</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>ATmega328P-AU Microcontroller</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>ESP32 Development Platform</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>I2C Bus Protocol (EEPROM / RTC)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>UART Interface (GPS & 4G LTE)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>SPI / ICSP Programming Header</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>DS1337 Real-Time Clock</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>24LC1025 EEPROMs (256 KB)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>NEO-6M GPS & A7670C 4G LTE</li>
+            </ul>
+          </div>
+
+          <!-- Category 5: PCB VERIFICATION -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">PCB VERIFICATION</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Electrical Rules Check (ERC)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Design Rules Check (DRC)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Trace Clearance Auditing</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Unconnected Nets Verification</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Component Courtyard Checking</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#22C55E]"></span>Silkscreen Overlap Prevention</li>
+            </ul>
+          </div>
+
+          <!-- Category 6 & 7: MANUFACTURING & TOOLS -->
+          <div class="hw-card p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[#1F2937]">
+              <div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400">
+                <i data-lucide="printer" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-mono text-sm font-bold text-white uppercase tracking-wider">MANUFACTURING & TOOLS</h3>
+            </div>
+            <ul class="space-y-2 text-xs font-mono text-slate-300">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>Gerber RS-274X Generation</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>Excellon Drill File Generation</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>Board Edge Cut Definition</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>KiCad 9 Suite (Eeschema, Pcbnew)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>Git Version Control</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>GitHub Project Hosting</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 5. FEATURED PROJECTS ================= -->
+    <section id="projects" class="py-16 md:py-24 border-t border-[#1F2937] bg-[#0E1526]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="circuit-board" class="w-4 h-4"></i> Primary Portfolio Showcase
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Featured PCB Projects</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            End-to-end hardware boards designed in KiCad 9 with schematic capture, routing, DRC sign-off, and fabrication outputs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- PROJECT 1: MCU DATA LOGGER -->
+          <article class="hw-card rounded-xl border border-[#1F2937] overflow-hidden flex flex-col justify-between">
+            <div>
+              <!-- Project Image Header -->
+              <div class="relative bg-[#070D18] aspect-[16/10] overflow-hidden border-b border-[#1F2937] group">
+                <img src="assets/images/projects/data-logger/3d-render.png" alt="MCU Data Logger 3D Board View" class="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-3 left-3 px-2 py-1 rounded bg-[#0B1120]/80 backdrop-blur border border-[#1F2937] text-[11px] font-mono text-[#22C55E]">
+                  KiCad 9 • 2-Layer
+                </div>
+                <div class="absolute top-3 right-3 px-2 py-1 rounded bg-[#0B1120]/80 backdrop-blur border border-[#1F2937] text-[11px] font-mono text-slate-300">
+                  DRC: 0 Errors
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6 space-y-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white tracking-tight">MCU Data Logger</h3>
+                  <p class="text-xs font-mono text-[#22C55E] mt-0.5">ATmega328P Data Acquisition Board</p>
+                </div>
+
+                <p class="text-[#94A3B8] text-sm leading-relaxed">
+                  A battery-backed data logging hardware board designed with an <strong class="text-white">ATmega328P-AU</strong> microcontroller, high-precision <strong class="text-white">DS1337 RTC</strong>, and two <strong class="text-white">24LC1025 I2C EEPROMs</strong> (256 KB non-volatile memory), equipped with I2C, UART, GPIO, and ICSP headers.
+                </p>
+
+                <!-- My Role & Work -->
+                <div class="bg-[#0B1120] p-3 rounded-lg border border-[#1F2937] text-xs space-y-1">
+                  <div class="text-[#22C55E] font-mono font-semibold uppercase tracking-wider">My Role & Engineering Work</div>
+                  <p class="text-slate-300 leading-normal">
+                    Hierarchical schematic capture (MCU, RTC, EEPROM, and connector sheets), crystal oscillator loop isolation, decoupling capacitors placed directly adjacent to IC pins, 2-layer routing with copper ground fills, DRC validation, and Gerber generation.
+                  </p>
+                </div>
+
+                <!-- Main Components Pills -->
+                <div>
+                  <span class="text-[11px] font-mono text-slate-400 block mb-1.5 uppercase">Key Components & Interfaces:</span>
+                  <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">ATmega328P-AU</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">DS1337 RTC</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">2× 24LC1025 EEPROM</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">I2C Bus</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">ICSP Header</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">UART</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="px-6 py-4 bg-[#0B1120] border-t border-[#1F2937] flex items-center justify-between">
+              <button data-open-project="modal-datalogger" class="px-4 py-2 rounded-md bg-[#22C55E]/15 hover:bg-[#22C55E]/25 text-[#22C55E] border border-[#22C55E]/30 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <span>PROJECT DETAILS</span>
+              </button>
+
+              <a href="https://github.com/siddharthkote25/MCU-_-DATA_LOGGER" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-md bg-[#111827] hover:bg-[#1F2937] text-slate-300 hover:text-white border border-[#1F2937] text-xs font-mono transition-all flex items-center gap-1.5">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: SAFESTEPS -->
+          <article class="hw-card rounded-xl border border-[#1F2937] overflow-hidden flex flex-col justify-between">
+            <div>
+              <!-- Project Image Header -->
+              <div class="relative bg-[#070D18] aspect-[16/10] overflow-hidden border-b border-[#1F2937] group">
+                <img src="assets/images/projects/safesteps/3d-render.png" alt="SafeSteps 3D Board View" class="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-3 left-3 px-2 py-1 rounded bg-[#0B1120]/80 backdrop-blur border border-[#1F2937] text-[11px] font-mono text-[#22C55E]">
+                  KiCad 9 • 2-Layer
+                </div>
+                <div class="absolute top-3 right-3 px-2 py-1 rounded bg-[#0B1120]/80 backdrop-blur border border-[#1F2937] text-[11px] font-mono text-slate-300">
+                  DRC: 0 Errors
+                </div>
+              </div>
+
+              <!-- Content Body -->
+              <div class="p-6 space-y-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white tracking-tight">SafeSteps</h3>
+                  <p class="text-xs font-mono text-[#22C55E] mt-0.5">ESP32-Based Personal Safety & Telematics Device</p>
+                </div>
+
+                <p class="text-[#94A3B8] text-sm leading-relaxed">
+                  Hardware subsystem for a personal emergency alert device combining an <strong class="text-white">ESP32</strong> microcontroller, <strong class="text-white">NEO-6M GPS</strong>, <strong class="text-white">A7670C 4G LTE</strong> cellular module, tactile SOS trigger button, buzzer, and status LED indicators powered via Li-Po battery and an <strong class="text-white">HT7333 3.3V LDO</strong>.
+                </p>
+
+                <!-- My Role & Work -->
+                <div class="bg-[#0B1120] p-3 rounded-lg border border-[#1F2937] text-xs space-y-1">
+                  <div class="text-[#22C55E] font-mono font-semibold uppercase tracking-wider">My Role & Engineering Work</div>
+                  <p class="text-slate-300 leading-normal">
+                    Schematic design linking ESP32 to dual UART channels (GPS and LTE), created custom footprints and symbols for modules and HT7333 regulator, setup net classes and design rules, power and signal routing, ERC & DRC verification, and Gerber outputs.
+                  </p>
+                </div>
+
+                <!-- Main Components Pills -->
+                <div>
+                  <span class="text-[11px] font-mono text-slate-400 block mb-1.5 uppercase">Key Components & Interfaces:</span>
+                  <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">ESP32 DevKit</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">NEO-6M GPS</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">A7670C 4G LTE</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">HT7333 3.3V LDO</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">SOS Button</span>
+                    <span class="px-2 py-0.5 rounded bg-[#1F2937] text-slate-200">Dual UART</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="px-6 py-4 bg-[#0B1120] border-t border-[#1F2937] flex items-center justify-between">
+              <button data-open-project="modal-safesteps" class="px-4 py-2 rounded-md bg-[#22C55E]/15 hover:bg-[#22C55E]/25 text-[#22C55E] border border-[#22C55E]/30 text-xs font-mono font-medium transition-all flex items-center gap-1.5">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <span>PROJECT DETAILS</span>
+              </button>
+
+              <a href="https://github.com/siddharthkote25/SafeSteps" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-md bg-[#111827] hover:bg-[#1F2937] text-slate-300 hover:text-white border border-[#1F2937] text-xs font-mono transition-all flex items-center gap-1.5">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 6. PROJECT DETAIL MODALS (DEEP DIVES) ================= -->
+    <!-- Modal 1: MCU Data Logger Detail -->
+    <div id="modal-datalogger" class="project-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6">
+      <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+      <div class="relative bg-[#111827] border border-[#1F2937] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto z-10 shadow-2xl p-6 sm:p-8 space-y-6">
+        
+        <div class="flex items-start justify-between pb-4 border-b border-[#1F2937]">
+          <div>
+            <span class="text-xs font-mono text-[#22C55E] uppercase">KiCad 9 Hardware Deep-Dive</span>
+            <h3 class="text-2xl font-bold text-white mt-1">MCU Data Logger — ATmega328P Acquisition Board</h3>
+          </div>
+          <button data-close-project class="p-2 text-[#94A3B8] hover:text-white rounded-lg hover:bg-[#1F2937]" aria-label="Close modal">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Section 1: Overview & Objective -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">1. Overview & Objective</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Designed to serve as a standalone embedded telemetry logger. The objective was to design a clean 2-layer PCB containing an 8-bit AVR microcontroller running at 16 MHz, a dedicated battery-backed real-time clock (DS1337) with its own 32.768 kHz quartz crystal, and dual high-capacity non-volatile EEPROMs (24LC1025) sharing an I2C bus with hardware address strap pins.
+          </p>
+        </div>
+
+        <!-- Section 2: System Architecture & Components -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">2. System & Components</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">MCU:</span>
+              <strong class="text-white">ATmega328P-AU (TQFP-32)</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">RTC & Battery Backup:</span>
+              <strong class="text-white">DS1337 + 32.768 kHz Quartz Crystal</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Non-Volatile Storage:</span>
+              <strong class="text-white">2× Microchip 24LC1025 I2C EEPROM (256 KB)</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Bus & Headers:</span>
+              <strong class="text-white">I2C, UART, 6-pin ICSP, GPIO Header</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Visual Inspection (Schematic & Layout) -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">3. Schematic, Layout & 3D Views</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <span class="text-xs font-mono text-[#94A3B8]">Schematic Sheet 1: MCU Core & Power</span>
+              <div class="bg-[#070D18] p-2 rounded border border-[#1F2937] aspect-[4/3] flex items-center justify-center">
+                <img src="assets/images/projects/data-logger/schematic-sheet1.png" alt="MCU Schematic Sheet 1" class="max-h-full max-w-full object-contain">
+              </div>
+            </div>
+            <div class="space-y-1">
+              <span class="text-xs font-mono text-[#94A3B8]">2-Layer PCB Top Layout</span>
+              <div class="bg-[#070D18] p-2 rounded border border-[#1F2937] aspect-[4/3] flex items-center justify-center">
+                <img src="assets/images/projects/data-logger/top-view.png" alt="MCU PCB Layout" class="max-h-full max-w-full object-contain">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Design Process & Verification -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">4. Design Process & Verification</h4>
+          <ul class="space-y-1.5 text-xs text-slate-300 leading-relaxed list-disc list-inside">
+            <li><strong class="text-white">Hierarchical Design:</strong> Partitioned schematic into clean logical blocks (MCU, RTC, EEPROM, and external connectors).</li>
+            <li><strong class="text-white">Bypass Capacitors:</strong> 0.1µF decoupling capacitors placed immediately adjacent to VCC and AVCC pins before routing to power rails.</li>
+            <li><strong class="text-white">Oscillator Isolation:</strong> Kept 16 MHz and 32.768 kHz crystal tracks as short as possible with tight loop area to prevent parasitic coupling.</li>
+            <li><strong class="text-white">Ground Return:</strong> Flooded board with continuous ground copper fills on both layers connected through vias.</li>
+            <li><strong class="text-white">Rules Verification:</strong> Zero Electrical Rules Check (ERC) violations and zero clearance Design Rules Check (DRC) violations.</li>
+            <li><strong class="text-white">Manufacturing Output:</strong> Generated standard Gerber RS-274X files, Excellon drill files, and silkscreen layers.</li>
+          </ul>
+        </div>
+
+        <!-- Footer / Link -->
+        <div class="pt-4 border-t border-[#1F2937] flex items-center justify-between">
+          <a href="https://github.com/siddharthkote25/MCU-_-DATA_LOGGER" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-[#22C55E] text-slate-950 font-semibold text-xs font-mono">
+            <i data-lucide="github" class="w-4 h-4"></i> View Source Files on GitHub
+          </a>
+          <button data-close-project class="px-4 py-2 text-xs font-mono text-slate-400 hover:text-white">Close Window</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal 2: SafeSteps Detail -->
+    <div id="modal-safesteps" class="project-modal fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6">
+      <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+      <div class="relative bg-[#111827] border border-[#1F2937] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto z-10 shadow-2xl p-6 sm:p-8 space-y-6">
+        
+        <div class="flex items-start justify-between pb-4 border-b border-[#1F2937]">
+          <div>
+            <span class="text-xs font-mono text-[#22C55E] uppercase">KiCad 9 Hardware Deep-Dive</span>
+            <h3 class="text-2xl font-bold text-white mt-1">SafeSteps — ESP32 Telematics & Emergency Safety Device</h3>
+          </div>
+          <button data-close-project class="p-2 text-[#94A3B8] hover:text-white rounded-lg hover:bg-[#1F2937]" aria-label="Close modal">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Section 1: Overview & Objective -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">1. Overview & Objective</h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            SafeSteps is a portable hardware system designed for personal emergency assistance and location tracking. The objective was to integrate an ESP32 microcontroller with a NEO-6M GPS receiver and an A7670C 4G LTE cellular module on a dedicated 2-layer PCB powered by a single-cell Li-Po battery and an ultra-low dropout HT7333 3.3V voltage regulator.
+          </p>
+        </div>
+
+        <!-- Section 2: System Architecture & Components -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">2. System & Components</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300">
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Processing Core:</span>
+              <strong class="text-white">ESP32 (Wi-Fi/Bluetooth MCU)</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Positioning & Cellular:</span>
+              <strong class="text-white">NEO-6M GPS + A7670C 4G LTE Module</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Power Management:</span>
+              <strong class="text-white">HT7333 3.3V LDO + Li-Po Power Rail</strong>
+            </div>
+            <div class="bg-[#0B1120] p-3 rounded border border-[#1F2937]">
+              <span class="text-slate-400 block">Alert Interface:</span>
+              <strong class="text-white">Tactile SOS Button, Status LED, Buzzer</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Visual Inspection (Schematic & Layout) -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">3. Schematic, Layout & 3D Views</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <span class="text-xs font-mono text-[#94A3B8]">KiCad 9 Schematic Design</span>
+              <div class="bg-[#070D18] p-2 rounded border border-[#1F2937] aspect-[4/3] flex items-center justify-center">
+                <img src="assets/images/projects/safesteps/schematic.png" alt="SafeSteps Schematic" class="max-h-full max-w-full object-contain">
+              </div>
+            </div>
+            <div class="space-y-1">
+              <span class="text-xs font-mono text-[#94A3B8]">2-Layer PCB Top Layout</span>
+              <div class="bg-[#070D18] p-2 rounded border border-[#1F2937] aspect-[4/3] flex items-center justify-center">
+                <img src="assets/images/projects/safesteps/top-view.png" alt="SafeSteps PCB Layout" class="max-h-full max-w-full object-contain">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Design Process & Verification -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-mono font-bold text-[#22C55E] uppercase tracking-wider">4. Design Process & Verification</h4>
+          <ul class="space-y-1.5 text-xs text-slate-300 leading-relaxed list-disc list-inside">
+            <li><strong class="text-white">Custom Footprints:</strong> Created custom symbols and footprints for the HT7333 voltage regulator and module headers.</li>
+            <li><strong class="text-white">Serial Bus Segregation:</strong> Assigned dedicated UART hardware lines between ESP32 and NEO-6M GPS as well as A7670C 4G LTE.</li>
+            <li><strong class="text-white">Power Supply Stability:</strong> Routed clean power traces with input/output bypass filtering for the HT7333 to prevent voltage drops during cellular TX burst.</li>
+            <li><strong class="text-white">ERC & DRC Sign-Off:</strong> Verified schematic with KiCad Electrical Rules Check and ran Design Rules Check with zero clearance violations.</li>
+            <li><strong class="text-white">Fabrication Deliverables:</strong> Generated Gerbers (RS-274X), NC drill files, and silkscreen layers.</li>
+          </ul>
+        </div>
+
+        <!-- Footer / Link -->
+        <div class="pt-4 border-t border-[#1F2937] flex items-center justify-between">
+          <a href="https://github.com/siddharthkote25/SafeSteps" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-[#22C55E] text-slate-950 font-semibold text-xs font-mono">
+            <i data-lucide="github" class="w-4 h-4"></i> View Source Files on GitHub
+          </a>
+          <button data-close-project class="px-4 py-2 text-xs font-mono text-slate-400 hover:text-white">Close Window</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= 7. PCB DESIGN PROCESS ================= -->
+    <section id="process" class="py-16 md:py-20 border-t border-[#1F2937]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="workflow" class="w-4 h-4"></i> Engineering Methodology
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">PCB Design Workflow</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            The systematic, repeatable engineering process I follow for every board from concept to fabrication.
+          </p>
+        </div>
+
+        <!-- Workflow Grid / Flowchart -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Step 1 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 01</span>
+              <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Requirements & Architecture</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Define circuit requirements, operating voltages, component datasheets, and interface pinouts.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 02</span>
+              <i data-lucide="git-branch" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Schematic Capture</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Organize hierarchical sheets, connect power flags, net labels, passive filters, and decoupling caps.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 03</span>
+              <i data-lucide="shield-alert" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">ERC Verification</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Run Electrical Rules Check to detect unconnected pins, power port conflicts, and net anomalies.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 04</span>
+              <i data-lucide="box" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Footprint Assignment</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Match packages (SOIC, TQFP, 0805 passives) and draft custom footprints for non-standard modules.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 05</span>
+              <i data-lucide="layout-grid" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Board Setup & Placement</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Set board outline (Edge.Cuts), place connectors at edges, group by function, place bypass caps at ICs.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 06</span>
+              <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Net Classes & Routing</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Define trace width and clearance rules. Route critical clocks and high-speed lines first with 45° corners.
+            </p>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 07</span>
+              <i data-lucide="layers" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">Copper Zones & Pours</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Pour continuous top and bottom ground planes (GND) with thermal relief spokes on pads for soldering.
+            </p>
+          </div>
+
+          <!-- Step 8 -->
+          <div class="hw-card p-4 rounded-xl border border-[#1F2937] relative">
+            <div class="flex items-center justify-between mb-3 text-xs font-mono text-[#22C55E]">
+              <span>STEP 08</span>
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-1">DRC & Gerber Export</h3>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Run Design Rules Check, inspect 3D view for collisions, export RS-274X Gerbers and Excellon drill files.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 8. PCB KNOWLEDGE / CAPABILITIES ================= -->
+    <section id="capabilities" class="py-16 md:py-20 border-t border-[#1F2937] bg-[#0E1526]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="check-square" class="w-4 h-4"></i> Core Concepts
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">PCB Knowledge & Capabilities</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Technical principles applied across schematic architecture, layout rules, and board bring-up.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="move" class="w-4 h-4 text-[#22C55E]"></i> Component Placement
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Organizing floorplans by functional domain (microcontroller core, power management, storage, external headers) to minimize total trace length.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="zap" class="w-4 h-4 text-[#22C55E]"></i> Power Routing
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Allocating wider track widths for primary power rails (VCC, 3.3V) to reduce trace impedance, limit voltage drop, and ensure stable supply currents.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="disc" class="w-4 h-4 text-[#22C55E]"></i> Decoupling Strategy
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Placing 0.1µF ceramic bypass capacitors directly adjacent to power pins before connecting to main rails to suppress high-frequency switching noise.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="activity" class="w-4 h-4 text-[#22C55E]"></i> Crystal Oscillator Isolation
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Placing quartz crystals (16 MHz and 32.768 kHz) close to the microcontroller with symmetric routing and minimal loop area to prevent radiation and drift.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="shield" class="w-4 h-4 text-[#22C55E]"></i> Grounding & Return Paths
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Utilizing solid copper ground planes on top and bottom layers, avoiding split returns, and providing low-impedance paths for return currents.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="ruler" class="w-4 h-4 text-[#22C55E]"></i> Trace Width & Clearance
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Configuring net classes with distinct clearance rules for signal, power, and high-density IC pins to prevent solder bridging and signal cross-talk.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="git-pull-request" class="w-4 h-4 text-[#22C55E]"></i> Bus Architecture & Pull-ups
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Implementing dedicated pull-up resistors on shared I2C bus lines (SDA/SCL) and isolated TX/RX UART lines for external modules like GPS and LTE modems.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#22C55E]"></i> ERC & DRC Rule Checking
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Rigorous sign-off: resolving all schematic pin-type warnings in ERC and enforcing zero clearance errors, unconnected nets, or courtyard collisions in DRC.
+            </p>
+          </div>
+
+          <div class="bg-[#111827] p-5 rounded-xl border border-[#1F2937]">
+            <div class="flex items-center gap-2.5 mb-2 font-mono text-sm font-bold text-white">
+              <i data-lucide="file-output" class="w-4 h-4 text-[#22C55E]"></i> Gerber & Drill Generation
+            </div>
+            <p class="text-xs text-[#94A3B8] leading-relaxed">
+              Exporting industry-standard RS-274X Gerber layer packages (copper, mask, silkscreen, edge cuts) and Excellon drill files ready for fabrication houses.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 9. PROJECT GALLERY ================= -->
+    <section id="gallery" class="py-16 md:py-20 border-t border-[#1F2937]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="image" class="w-4 h-4"></i> Visual Artifacts
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Project Gallery</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Inspect real schematic captures, PCB layout graphics, 3D KiCad renders, and prototyping diagrams. Click any image for high-resolution inspection.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Item 1: MCU 3D View -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/data-logger/3d-render.png" data-caption="MCU Data Logger — 3D Raytraced Board Inspection (KiCad 9)">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/data-logger/3d-render.png" alt="MCU Data Logger 3D View" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">MCU Data Logger — 3D View</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">ATmega328P, RTC, dual EEPROMs, crystals & headers</div>
+            </div>
+          </div>
+
+          <!-- Item 2: MCU PCB Layout -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/data-logger/top-view.png" data-caption="MCU Data Logger — 2-Layer PCB Layout & Copper Traces">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/data-logger/top-view.png" alt="MCU Data Logger PCB Layout" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">MCU Data Logger — PCB Layout</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">Top copper, solder mask, and silkscreen reference</div>
+            </div>
+          </div>
+
+          <!-- Item 3: MCU Schematic Sheet 1 -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/data-logger/schematic-sheet1.png" data-caption="MCU Data Logger — Schematic Sheet 1: ATmega328P Core Circuitry">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/data-logger/schematic-sheet1.png" alt="MCU Schematic Sheet 1" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">MCU Data Logger — Schematic 1</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">ATmega328P, oscillator, power pins & decoupling</div>
+            </div>
+          </div>
+
+          <!-- Item 4: MCU Schematic Sheet 2 -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/data-logger/schematic-sheet2.png" data-caption="MCU Data Logger — Schematic Sheet 2: DS1337 RTC & Dual 24LC1025 EEPROMs">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/data-logger/schematic-sheet2.png" alt="MCU Schematic Sheet 2" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">MCU Data Logger — Schematic 2</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">I2C bus, RTC backup power, and EEPROM address pins</div>
+            </div>
+          </div>
+
+          <!-- Item 5: SafeSteps 3D View -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/safesteps/3d-render.png" data-caption="SafeSteps — 3D Board View (KiCad 9)">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/safesteps/3d-render.png" alt="SafeSteps 3D View" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">SafeSteps — 3D View</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">ESP32 DevKit socket, buzzer, LED, switch & headers</div>
+            </div>
+          </div>
+
+          <!-- Item 6: SafeSteps PCB Layout -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/safesteps/top-view.png" data-caption="SafeSteps — 2-Layer PCB Layout">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/safesteps/top-view.png" alt="SafeSteps PCB Layout" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">SafeSteps — PCB Layout</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">Top copper and component footprint layout</div>
+            </div>
+          </div>
+
+          <!-- Item 7: SafeSteps Schematic -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/safesteps/schematic.png" data-caption="SafeSteps — KiCad Schematic Design">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/safesteps/schematic.png" alt="SafeSteps KiCad Schematic" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">SafeSteps — Schematic Design</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">ESP32 UART lines, HT7333 regulator & GPS/LTE pins</div>
+            </div>
+          </div>
+
+          <!-- Item 8: SafeSteps Breadboard Wiring -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/safesteps/breadboard-wiring-diagram.jpeg" data-caption="SafeSteps — Hardware Prototyping & Breadboard Bring-Up">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/safesteps/breadboard-wiring-diagram.jpeg" alt="Hardware Prototyping Wiring" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">SafeSteps — Prototype Bring-Up</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">Breadboard wiring verification of cellular and GPS</div>
+            </div>
+          </div>
+
+          <!-- Item 9: SafeSteps System Architecture -->
+          <div class="gallery-item gallery-card p-2 rounded-xl group" data-img-src="assets/images/projects/safesteps/pcb-schematic-diagram.jpeg" data-caption="SafeSteps — System Block Architecture & Interconnects">
+            <div class="relative bg-[#070D18] aspect-[4/3] rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="assets/images/projects/safesteps/pcb-schematic-diagram.jpeg" alt="SafeSteps System Diagram" class="max-h-full max-w-full object-contain p-2">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-3 py-1.5 rounded-full bg-[#111827]/90 text-[#22C55E] text-xs font-mono border border-[#1F2937] flex items-center gap-1">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Inspect Image
+                </span>
+              </div>
+            </div>
+            <div class="p-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-medium">SafeSteps — System Architecture</div>
+              <div class="text-[#94A3B8] text-[11px] mt-0.5">High-level hardware interconnects and power routing</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 10. RESUME ================= -->
+    <section id="resume" class="py-16 md:py-20 border-t border-[#1F2937] bg-[#0E1526]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Official Resume
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Resume</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Verified academic and hardware engineering qualifications. Download the latest resume below.
+          </p>
+        </div>
+
+        <div class="hw-card rounded-2xl border border-[#1F2937] p-6 sm:p-8 max-w-4xl mx-auto">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-[#1F2937]">
+            <div>
+              <span class="text-xs font-mono text-[#22C55E] font-medium uppercase tracking-wider">Available for 2026 Hardware Roles</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Siddharth Kote — Resume (PDF)</h3>
+              <p class="text-sm text-[#94A3B8] mt-1">
+                B.Tech in Electronics and Communication Engineering • KiCad 9 PCB Design
+              </p>
+            </div>
+            <div class="flex items-center gap-3 flex-shrink-0">
+              <a href="resume.pdf" download="Siddharthkote_Resume.pdf" class="px-5 py-2.5 rounded-lg bg-[#22C55E] hover:bg-[#16A34A] text-slate-950 font-semibold text-sm font-mono transition-all shadow-lg shadow-green-500/20 flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>DOWNLOAD RESUME</span>
+              </a>
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-[#0B1120] hover:bg-[#1F2937] text-white border border-[#1F2937] text-sm font-mono transition-all flex items-center gap-1.5">
+                <i data-lucide="external-link" class="w-4 h-4 text-cyan-400"></i>
+                <span>View PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-xs text-slate-300">
+            <div>
+              <h4 class="font-mono text-white uppercase font-bold mb-2">Education</h4>
+              <p class="font-medium text-slate-200">Nutan College of Eng. & Research</p>
+              <p class="text-[#94A3B8]">B.Tech in ECE (2022 – 2026)</p>
+              <p class="text-[#94A3B8] mt-0.5">Pune, India</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-white uppercase font-bold mb-2">Core Competencies</h4>
+              <p class="text-slate-300">KiCad 9, Schematic Capture, 2-Layer Layout, Footprint Design, ERC/DRC, Ground Pours, Gerber Generation.</p>
+            </div>
+            <div>
+              <h4 class="font-mono text-white uppercase font-bold mb-2">Direct Contact</h4>
+              <p class="font-mono text-slate-200">siddharthkote129@gmail.com</p>
+              <p class="font-mono text-[#94A3B8] mt-0.5">+91-8623001138</p>
+              <p class="text-[#22C55E] mt-0.5">Pune, Maharashtra</p>
+            </div>
           </div>
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ================= CONTACT & GET IN TOUCH ================= -->
-  <section id="contact" class="py-24 border-t border-slate-800/80 bg-[#090e1a]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="hw-card rounded-2xl p-8 sm:p-12 border border-slate-700/80 text-center relative overflow-hidden">
+    <!-- ================= 11. GITHUB REPOSITORIES ================= -->
+    <section class="py-16 md:py-20 border-t border-[#1F2937]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="relative z-10 max-w-2xl mx-auto space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>LET'S CONNECT FOR OPPORTUNITIES</span>
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="git-fork" class="w-4 h-4"></i> Open Source Hardware
           </div>
-
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Interested in adding an enthusiastic Hardware & PCB Designer to your team?
-          </h2>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            I'm currently seeking entry-level PCB Design Engineer and Hardware Engineering roles. Open to discussing design files, schematic reviews, or full-time opportunities.
+          <h2 class="text-3xl font-bold text-white tracking-tight">Explore My Projects</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            All schematic files, PCB layouts, footprints, and project notes are published publicly on GitHub.
           </p>
+        </div>
 
-          <!-- Contact Channels Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          
+          <a href="https://github.com/siddharthkote25/MCU-_-DATA_LOGGER" target="_blank" rel="noopener noreferrer" class="hw-card p-5 rounded-xl border border-[#1F2937] hover:border-[#22C55E] transition-all group block">
+            <div class="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
+              <span class="flex items-center gap-1 text-[#22C55E]"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Repository</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-[#22C55E] transition-colors">MCU-_-DATA_LOGGER</h3>
+            <p class="text-xs text-[#94A3B8] mt-1.5 leading-relaxed">
+              ATmega328P KiCad schematic & 2-layer layout files with RTC and dual I2C EEPROMs.
+            </p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-mono text-slate-400">
+              <span class="w-2 h-2 rounded-full bg-[#22C55E]"></span> KiCad
+            </div>
+          </a>
+
+          <a href="https://github.com/siddharthkote25/SafeSteps" target="_blank" rel="noopener noreferrer" class="hw-card p-5 rounded-xl border border-[#1F2937] hover:border-[#22C55E] transition-all group block">
+            <div class="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
+              <span class="flex items-center gap-1 text-[#22C55E]"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Repository</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-[#22C55E] transition-colors">SafeSteps</h3>
+            <p class="text-xs text-[#94A3B8] mt-1.5 leading-relaxed">
+              ESP32 personal safety device KiCad 9 schematics, custom footprints, and layout.
+            </p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-mono text-slate-400">
+              <span class="w-2 h-2 rounded-full bg-[#22C55E]"></span> KiCad
+            </div>
+          </a>
+
+          <a href="https://github.com/siddharthkote25/SafeSteps-Embeeded-and-info-" target="_blank" rel="noopener noreferrer" class="hw-card p-5 rounded-xl border border-[#1F2937] hover:border-[#22C55E] transition-all group block">
+            <div class="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
+              <span class="flex items-center gap-1 text-[#22C55E]"><i data-lucide="folder" class="w-3.5 h-3.5"></i> Repository</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-base font-bold text-white group-hover:text-[#22C55E] transition-colors">SafeSteps-Embeeded-and-info-</h3>
+            <p class="text-xs text-[#94A3B8] mt-1.5 leading-relaxed">
+              Hardware documentation, breadboard wiring diagrams, and sensor bring-up info.
+            </p>
+            <div class="mt-3 flex items-center gap-2 text-[11px] font-mono text-slate-400">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Hardware Docs
+            </div>
+          </a>
+
+        </div>
+
+        <div class="text-center">
+          <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111827] hover:bg-[#1F2937] text-white border border-[#1F2937] hover:border-[#22C55E] font-mono text-sm transition-all shadow-md">
+            <i data-lucide="github" class="w-4 h-4 text-[#22C55E]"></i>
+            <span>Visit @siddharthkote25 on GitHub</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 12. CONTACT ================= -->
+    <section id="contact" class="py-16 md:py-24 border-t border-[#1F2937] bg-[#0E1526]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#22C55E] mb-2 uppercase tracking-wider">
+            <i data-lucide="send" class="w-4 h-4"></i> Get in Touch
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Contact</h2>
+          <p class="text-[#94A3B8] mt-2 text-base">
+            Open for entry-level PCB Design Engineer and Hardware Engineer opportunities. Let's discuss how I can contribute to your hardware team.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Details Cards -->
+          <div class="md:col-span-6 space-y-4">
             
             <!-- Email -->
-            <button class="copy-trigger p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all group flex flex-col justify-between" data-copy="siddharthkote129@gmail.com" data-label="Email address">
-              <div class="flex items-center justify-between mb-2">
-                <i data-lucide="mail" class="w-5 h-5 text-emerald-400"></i>
-                <span class="text-[10px] font-mono text-slate-500 group-hover:text-emerald-300">Click to Copy</span>
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937] flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-[#22C55E]/10 flex items-center justify-center text-[#22C55E]">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-[#94A3B8]">Email Address</div>
+                  <a href="mailto:siddharthkote129@gmail.com" class="text-sm font-semibold text-white hover:text-[#22C55E] transition-colors">
+                    siddharthkote129@gmail.com
+                  </a>
+                </div>
               </div>
-              <div>
-                <span class="text-xs text-slate-400 block">Direct Email</span>
-                <span class="text-xs font-mono font-semibold text-white break-all">siddharthkote129@gmail.com</span>
-              </div>
-            </button>
+              <button class="copy-trigger px-3 py-1.5 rounded bg-[#0B1120] hover:bg-[#1F2937] text-slate-300 hover:text-white border border-[#1F2937] text-xs font-mono transition-all" data-copy="siddharthkote129@gmail.com" data-label="Email">
+                Copy
+              </button>
+            </div>
 
             <!-- Phone -->
-            <button class="copy-trigger p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all group flex flex-col justify-between" data-copy="+918623001138" data-label="Phone number">
-              <div class="flex items-center justify-between mb-2">
-                <i data-lucide="phone" class="w-5 h-5 text-cyan-400"></i>
-                <span class="text-[10px] font-mono text-slate-500 group-hover:text-cyan-300">Click to Copy</span>
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937] flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-[#94A3B8]">Phone / WhatsApp</div>
+                  <a href="tel:+918623001138" class="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
+                    +91-8623001138
+                  </a>
+                </div>
               </div>
-              <div>
-                <span class="text-xs text-slate-400 block">Phone / WhatsApp</span>
-                <span class="text-xs font-mono font-semibold text-white">+91-8623001138</span>
-              </div>
-            </button>
+              <button class="copy-trigger px-3 py-1.5 rounded bg-[#0B1120] hover:bg-[#1F2937] text-slate-300 hover:text-white border border-[#1F2937] text-xs font-mono transition-all" data-copy="+918623001138" data-label="Phone">
+                Copy
+              </button>
+            </div>
 
             <!-- Location -->
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between">
-              <div class="flex items-center justify-between mb-2">
-                <i data-lucide="map-pin" class="w-5 h-5 text-amber-400"></i>
-                <span class="text-[10px] font-mono text-slate-500">Base Location</span>
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937] flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">Relocation Ready</span>
-                <span class="text-xs font-mono font-semibold text-white">Pune, Maharashtra, India</span>
+                <div class="text-xs font-mono text-[#94A3B8]">Location</div>
+                <div class="text-sm font-semibold text-white">Pune, Maharashtra, India</div>
+                <div class="text-[11px] text-[#94A3B8] font-mono">Available for relocation & remote engineering roles</div>
               </div>
             </div>
 
           </div>
 
-          <!-- Direct Mail Button -->
-          <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
-            <a href="mailto:siddharthkote129@gmail.com" class="px-8 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
-              <i data-lucide="send" class="w-4 h-4"></i>
-              <span>Send Direct Email</span>
-            </a>
+          <!-- Professional Links & Direct Email Action -->
+          <div class="md:col-span-6 space-y-4">
             
-            <a href="https://github.com/siddharthkote25" target="_blank" class="px-6 py-3.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all flex items-center gap-2">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>GitHub Profile</span>
-            </a>
+            <!-- GitHub Link -->
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937] flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-white">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-[#94A3B8]">GitHub Profile</div>
+                  <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-[#22C55E] transition-colors">
+                    github.com/siddharthkote25
+                  </a>
+                </div>
+              </div>
+              <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-[#0B1120] hover:bg-[#1F2937] text-[#22C55E] border border-[#1F2937] text-xs font-mono transition-all">
+                Visit ↗
+              </a>
+            </div>
+
+            <!-- LinkedIn Profile Placeholder -->
+            <div class="hw-card p-5 rounded-xl border border-[#1F2937] flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-[#94A3B8]">LinkedIn Profile</div>
+                  <a href="https://www.linkedin.com/in/siddharthkote25" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-blue-400 transition-colors">
+                    linkedin.com/in/siddharthkote25
+                  </a>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/in/siddharthkote25" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-[#0B1120] hover:bg-[#1F2937] text-blue-400 border border-[#1F2937] text-xs font-mono transition-all">
+                Connect ↗
+              </a>
+            </div>
+
+            <!-- Quick Mail Compose Box -->
+            <div class="bg-[#0B1120] p-5 rounded-xl border border-[#1F2937] space-y-3">
+              <div class="text-xs font-mono text-[#22C55E] font-semibold uppercase">Quick Inquiry</div>
+              <p class="text-xs text-[#94A3B8] leading-relaxed">
+                Click below to open an email draft to discuss an open role or hardware project.
+              </p>
+              <a href="mailto:siddharthkote129@gmail.com?subject=PCB%20Design%20Engineer%20Opportunity&body=Hi%20Siddharth,%0D%0A%0D%0AI%20reviewed%20your%20PCB%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20hardware%20opportunity.%0D%0A%0D%0ABest%20regards," class="w-full text-center py-2.5 rounded-lg bg-[#22C55E] hover:bg-[#16A34A] text-slate-950 font-semibold text-xs font-mono transition-all block">
+                Open Email Draft (siddharthkote129@gmail.com)
+              </a>
+            </div>
+
           </div>
 
         </div>
 
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="py-8 border-t border-slate-800/80 bg-[#060911] text-xs font-mono text-slate-500">
+  <!-- ================= 13. FOOTER ================= -->
+  <footer class="py-10 border-t border-[#1F2937] bg-[#070D18] text-xs text-[#94A3B8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        © 2026 Siddharth Kote • Hardware & PCB Design Engineer
+        <div class="font-bold text-white tracking-tight">Siddharth Kote</div>
+        <p class="font-mono mt-0.5">PCB Design • Hardware • Electronics</p>
       </div>
-      <div class="flex items-center gap-6">
-        <span class="text-slate-400">Designed with KiCad 9 & Tailwind CSS</span>
-        <a href="#about" class="hover:text-emerald-400 transition-colors flex items-center gap-1">
-          Back to Top <i data-lucide="arrow-up" class="w-3 h-3"></i>
-        </a>
+
+      <div class="flex items-center gap-6 font-mono">
+        <a href="#home" class="hover:text-white transition-colors">Back to Top ↑</a>
+        <a href="https://github.com/siddharthkote25" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/siddharthkote25" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="resume.pdf" download class="hover:text-white transition-colors">Resume</a>
+      </div>
+
+      <div class="font-mono text-[11px] text-slate-500">
+        © 2026 Siddharth Kote. Built for Hardware Engineering.
       </div>
     </div>
   </footer>
 
-  <!-- ================= IMAGE INSPECTION MODAL ================= -->
-  <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="relative max-w-5xl w-full bg-[#0d1322] border border-slate-700 rounded-xl overflow-hidden shadow-2xl flex flex-col">
-      <div class="flex items-center justify-between px-5 py-3 border-b border-slate-800 bg-slate-900 text-sm font-mono text-slate-300">
-        <span id="modal-caption" class="font-semibold text-emerald-400">Board Inspection</span>
-        <button id="modal-close" class="p-1 hover:text-white rounded hover:bg-slate-800 transition-colors">
+  <!-- ================= LIGHTBOX MODAL FOR GALLERY IMAGES ================= -->
+  <div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="modal-backdrop fixed inset-0 bg-black/85 backdrop-blur-sm"></div>
+    <div class="relative bg-[#111827] border border-[#1F2937] rounded-xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden z-10 shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-3 border-b border-[#1F2937] bg-[#0B1120]">
+        <div class="flex items-center gap-2">
+          <i data-lucide="zoom-in" class="w-4 h-4 text-[#22C55E]"></i>
+          <span id="modal-caption" class="text-xs font-mono font-medium text-slate-200">Board Inspection</span>
+        </div>
+        <button id="modal-close" class="p-1 rounded text-[#94A3B8] hover:text-white hover:bg-[#1F2937]" aria-label="Close modal">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <div class="p-4 flex items-center justify-center max-h-[80vh] overflow-auto">
-        <img id="modal-img" src="" alt="High-res Board Preview" class="max-h-[75vh] w-auto object-contain rounded">
+
+      <!-- Image Container -->
+      <div class="flex-1 bg-[#070D18] p-4 flex items-center justify-center overflow-auto max-h-[80vh]">
+        <img id="modal-img" src="" alt="High resolution board preview" class="max-h-full max-w-full object-contain rounded">
       </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 py-2.5 bg-[#0B1120] border-t border-[#1F2937] text-[11px] font-mono text-[#94A3B8] flex items-center justify-between">
+        <span>Click outside or press Escape to close</span>
+        <span class="text-[#22C55E]">Full-Resolution Hardware Asset</span>
+      </div>
+
     </div>
   </div>
 
-  <!-- Initialize Lucide Icons -->
-  <script>
-    lucide.createIcons();
-  </script>
-  <!-- Scripts -->
+  <!-- Custom Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
