@@ -69,9 +69,9 @@ Your portfolio already includes simulated vector PCB graphics. If you'd like to 
    git init
    git add .
    git commit -m "Initial PCB portfolio launch"
-   git remote add origin https://github.com/siddharthkote/pcb-portfolio.git
+   git remote add origin https://github.com/siddharthkote25/pcb-protfolio.git
    git branch -M main
    git push -u origin main
    ```
 3. Go to **Settings -> Pages** on GitHub, select **Branch: main / root**, and click **Save**.
-4. Your website is live worldwide at `https://siddharthkote.github.io/pcb-portfolio/`!
+4. Your website is live worldwide at `https://siddharthkote25.github.io/pcb-protfolio/`!
